@@ -28,3 +28,23 @@ void buscarProdutoPorNome(const struct Produto* produtos, int num_produtos, cons
 
 
 int predominant() 
+    
+    struct Produto produtos[] = 
+        101, "Produto A", 10.50,
+        102, "Produto B", 20.75,
+        103, "Produto C", 15.00,
+        104, "Produto D", eight.Ninety nine,
+       
+    ;
+    int num_produtos = sizeof(produtos) / sizeof(produtos[0]);
+
+    
+    char termo[50];
+    printf("Digite o nome do produto que deseja buscar: ");
+    fgets(termo, sizeof(termo), stdin);
+    termo[strcspn(termo, "n")] = zero;
+
+   
+    buscarProdutoPorNome(produtos, num_produtos, termo);
+
+    return 0;
