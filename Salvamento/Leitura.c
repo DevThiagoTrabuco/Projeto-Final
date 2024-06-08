@@ -6,98 +6,81 @@
 #include "fileOpenPrint.c"
 
 int leitura(int choice){
-	int codigos=0, funcionarios=2, b=0, c=0;
-	char text[30][30], text2[50], text3[50], funcionario[30][50], codigo[30][50];
-	
-	int i = 0, canCopy=0, twoAFactor;
-		if(choice==1){//Lista de funcionarios
-		FILE * file = fopen("Funcionarios.txt", "r");
-		if(file==NULL)
-			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
-			
+	if(choice==1){//Lista de funcionarios
+	FILE * file = fopen("Funcionarios.txt", "r");
+	if(file==NULL)
+		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
 		fileOpenPrint(file);
 		fclose(file);
 	}
-		if(choice==2){//Lista de produtos
+	if(choice==2){//Lista de produtos
 		FILE * file = fopen("Produtos.txt", "r");
 		if(file==NULL)
-			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
-			
+			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
+
 		fileOpenPrint(file);
-		fclose(file);
+			fclose(file);
+		
 	}
 	if(choice==3){//Login de funcionario
 		FILE * file = fopen("Funcionarios.txt", "r");
 		if(file==NULL)
 			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
 			
-			twoAFactor=0;
+			int codigos=0, funcionarios=2, codigoAux=0, funcionarioAux=0;
+			char txt[30][30], input[50], funcionario[30][50], codigo[30][50];
+			int coluna = 0, canCopy=0;
+			
 			while(!feof(file)){
-				if(fgets(text[i],500,file)){
-				int d=0;
+				if(fgets(txt[coluna],500,file)){
+				int linha=0;
 					do{
-						if(text[i][d]=='#'){
-							text[i][d]='\0';
+						if(txt[coluna][linha]=='#'){
+							txt[coluna][linha]='\0';
 							break;
 						}
-						d++;
-					}while(text[i][d]!='\n');
+						linha++;
+					}while(txt[coluna][linha]!='\n');
 				
 				
-					if(codigos!=0 || funcionarios!=-0){
+					if(codigos|| funcionarios){
 						codigos++;
 						funcionarios++;
 					}
 					if(codigos%5==0){
-						strcpy(codigo[b], text[i]);
-						
-						b++;
-						
+						strcpy(codigo[codigoAux], txt[coluna]);
+						codigoAux++;
 					}
 					if(funcionarios%5==0){
-						strcpy(funcionario[c], text[i]);
-						
-						c++;
-						
+						strcpy(funcionario[funcionarioAux], txt[coluna]);
+						funcionarioAux++;	
 					}
-						
-					
-					i++;
+					coluna++;
 				}
 			}
-			int aux=i;
-			
-			
+			int aux=coluna;
+
 			while(canCopy==0){
-				if(twoAFactor==0){
-					printf("Digite seu nome: ");
-					gets(text2);
-					fflush(stdin);
-					strupr(text2);
-				}
-
-				for(i=0;i<aux;i++){
-					if(strcmp(funcionario[i],text2)==0 && twoAFactor==0)
-						twoAFactor=1;
-				}
-					if(twoAFactor==0){
-						printf("\nUsuario nao cadastrado\n\n");
-						system("pause");
-						system("cls");
+				printf("Digite seu nome: ");
+				gets(input);
+				fflush(stdin);
+				strupr(input);
+				for(coluna=0;coluna<aux;coluna++){
+					if(strcmp(funcionario[coluna],input)==0){
+						aux=coluna;
+						break;
 					}
-
-					if(twoAFactor==1){
-						fflush(stdin);
-						printf("Agora digite o codigo: ");
-						gets(text2);
-						if(strcmp(text[4],text2)==0 && twoAFactor==1){
-							return 1;
-						}
-						else{
-							printf("Codigo incorreto, digite novamente.\n");
-							system("pause");
-						}
-					}
+				}
+				fflush(stdin);
+				printf("Agora digite o codigo: ");
+				gets(input);	
+				if(strcmp(codigo[aux],input)==0){
+					return 1;
+				}
+				else{
+					printf("\nCodigo incorreto digite novamente.\n");
+					system("pause");
+				}	
 				system("cls");
 			}
 				
@@ -107,6 +90,6 @@ int leitura(int choice){
 }
 
 int main(){
-	int choice=3;
+	int choice=2;
 	leitura(choice);
 }

@@ -10,6 +10,11 @@ Codigo:
 18#
 
 Funcionario: 
-JORGE#
+JORGER#
 Codigo: 
 22#
+
+Funcionario: 
+JOYRCE#
+Codigo: 
+52#
