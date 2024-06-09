@@ -56,8 +56,9 @@ int comprar(int option){
 			}	
 		}
 		
-		int productCode, productStock;
+		char productCode, productStock[30];
 		float productPriceFloat;
+		
 		int productsCodeAux, productStockAux;
 		float productsPriceFloatAux;
 		
@@ -78,18 +79,17 @@ int comprar(int option){
 			printf("Digite quantos %s voce deseja: ", product[inputAux]);
 			scanf("%d", &input);
 			productStockAux=input;
-			productStock=atoi(productStockString[inputAux]);
 			if(productStockAux>atoi(productStockString[inputAux])){
 				printf("\nNumero de produtos excede o estoque\n");
 				system("pause");
 			}
 			else{
-				productStockAux=productStock-productStockAux;
-				printf("\n%d\n", productStockAux);
+				productStockAux=atoi(productStockString[inputAux])-productStockAux;
+				sprintf(productStock,"%d", productStockAux);
+				strcpy(productStockString[inputAux], productStock);
+				printf("\nEstoque: %s\n", productStock);
 			}
-		}
-		
-		
+		}	
 	}
 }
 int main(){
