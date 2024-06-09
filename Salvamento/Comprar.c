@@ -5,7 +5,7 @@
 #include "flush.c"
 int comprar(int option){
 	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
-	char txt[200][50], input[50], product[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
+	char txt[200][50], input[50], productString[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
 	int column = 0, canCopy=0;
 	int number = 0;
 	
@@ -32,9 +32,9 @@ int comprar(int option){
 					productStocks++;
 				}
 				if(products%9==0){
-					strcpy(product[productAux], txt[column]);
+					strcpy(productString[productAux], txt[column]);
 					number++;
-					printf("%d - \tProduto: %s\n", number,product[productAux]);					
+					printf("%d - \tProduto: %s\n", number,productString[productAux]);					
 					productAux++;
 					
 				}
@@ -65,7 +65,7 @@ int comprar(int option){
 		int input;
 		int inputAux;
 		
-		while(1){
+		while(input!=75){
 			printf("\nQual produto deseja adicionar no carrinho?\n");
 			scanf("%d", &input);
 			inputAux=input-1;
@@ -75,8 +75,8 @@ int comprar(int option){
 				system("cls");
 				continue;
 			}
-			printf("O produto selecionado e o %s\n", product[inputAux]);
-			printf("Digite quantos %s voce deseja: ", product[inputAux]);
+			printf("O produto selecionado e o %s\n", productString[inputAux]);
+			printf("Digite quantos %s voce deseja: ", productString[inputAux]);
 			scanf("%d", &input);
 			productStockAux=input;
 			if(productStockAux>atoi(productStockString[inputAux])){
@@ -94,8 +94,14 @@ int comprar(int option){
 		FILE * file2 = fopen("Produtoss.txt", "w");
 		if(file==NULL)
 			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
-			
-		
+		int aux=0;
+		while(aux<number){
+			fprintf(file2,"\nProduto: \n%s#\n", productString[aux]);
+			fprintf(file2, "Preco: \n%s#\n", productPriceString[aux]);
+			fprintf(file2, "Codigo: \n%s#\n", productCodeString[aux]);
+			fprintf(file2, "Estoque: \n%s#\n", productStockString[aux]);
+			aux++;
+		}
 		
 	}
 }
