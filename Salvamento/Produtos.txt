@@ -5,6 +5,8 @@ Preco:
 15.00#
 Codigo:
 15#
+Estoque:
+500#
 
 Produto:
 JORGE#
@@ -12,10 +14,23 @@ Preco:
 16.00#
 Codigo:
 16#
+Estoque:
+500#
 
 Funcionario: 
 ARROZ#
-Codigo: 
-12#
 Preco: 
 15.75#
+Codigo: 
+12#
+Estoque:
+500#
+
+Funcionario: 
+ARROZ#
+Preco: 
+15.69#
+Codigo: 
+25#
+Estoque: 
+20#

@@ -4,8 +4,8 @@
 
 #include "flush.c"
 int comprar(int option){
-	int productCodes=0, products=4, produtctPrices=2, productCodeAux=0, productAux=0, productPriceAux=0;
-	char txt[30][30], product[30][50], productCode[30][50], productPrice[30][50];
+	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
+	char txt[200][50], input[50], product[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
 	int column = 0, canCopy=0;
 	int number = 0;
 	
@@ -24,35 +24,69 @@ int comprar(int option){
 					}
 					line++;
 				}while(txt[column][line]!='\n');
+				
 				if(productCodes|| products || produtctPrices){
 					productCodes++;
 					products++;
 					produtctPrices++;
+					productStocks++;
 				}
-				if(products%7==0){
+				if(products%9==0){
 					strcpy(product[productAux], txt[column]);
 					number++;
-					printf("%d - Produto: %s\n", number,product[productAux]);					
+					printf("%d - \tProduto: %s\n", number,product[productAux]);					
 					productAux++;
 					
 				}
-				if(produtctPrices%7==0){
-					strcpy(productPrice[productPriceAux], txt[column]);
-					printf("Preco: %s\n", productPrice[productPriceAux]);					
+				if(produtctPrices%9==0){
+					strcpy(productPriceString[productPriceAux], txt[column]);
+					printf("\tPreco: %s\n", productPriceString[productPriceAux]);
 					productPriceAux++;
 				}
-				if(productCodes%7==0){
-					strcpy(productCode[productCodeAux], txt[column]);
-					printf("Codigo: %s\n\n", productCode[productCodeAux]);
+				if(productCodes%9==0){
+					strcpy(productCodeString[productCodeAux], txt[column]);
+					printf("\tCodigo: %s\n\n", productCodeString[productCodeAux]);
 					productCodeAux++;
+				}
+				if(productStocks%9==0){
+					strcpy(productStockString[productStockAux], txt[column]);
+					productStockAux++;
 				}
 				column++;
 			}	
 		}
+		
+		int productCode, productStock;
+		float productPriceFloat;
+		int productsCodeAux, productStockAux;
+		float productsPriceFloatAux;
+		
 		int input;
+		int inputAux;
+		
 		while(1){
 			printf("\nQual produto deseja adicionar no carrinho?\n");
 			scanf("%d", &input);
+			inputAux=input-1;
+			if(input>number){
+				printf("Produto nao existe");
+				system("pause");
+				system("cls");
+				continue;
+			}
+			printf("O produto selecionado e o %s\n", product[inputAux]);
+			printf("Digite quantos %s voce deseja: ", product[inputAux]);
+			scanf("%d", &input);
+			productStockAux=input;
+			productStock=atoi(productStockString[inputAux]);
+			if(productStockAux>atoi(productStockString[inputAux])){
+				printf("\nNumero de produtos excede o estoque\n");
+				system("pause");
+			}
+			else{
+				productStockAux=productStock-productStockAux;
+				printf("\n%d\n", productStockAux);
+			}
 		}
 		
 		

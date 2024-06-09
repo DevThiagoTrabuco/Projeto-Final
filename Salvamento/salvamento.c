@@ -9,7 +9,7 @@
 #define MAX_CHAR 80
 
 typedef struct{
-	int code;
+	int code, stock;
 	float price;
 	char productName[MAX_CHAR];
 }Produtos;
@@ -20,8 +20,8 @@ typedef struct{
 }Funcionarios;
 
 int salvamento(int option){
-	int choice, i=0, codeAux;
-	char txt[30][30], textCode[50], text3[50], funcionario[30][50], codigo[30][50];
+	int choice=0, i=0;
+	char txt[30][30], textCode[50], text3[50], funcionario[30][50], codigo[30][50], codeAux[20];
 	
 	if(option==1){
 		Funcionarios funcionariosStruct[1];
@@ -97,7 +97,7 @@ int salvamento(int option){
 					}
 				}
 				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(codigo[coluna],textCode)==0 && doisFatoresCodigo==0){
+					if(strcmp(codigo[coluna],textCode)==0 || strcmp(codigo[coluna],codeAux)==0 && doisFatoresCodigo==0){
 						printf("Codigo de funcionario já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
@@ -109,7 +109,7 @@ int salvamento(int option){
 					}
 				}	
 			}
-			codeAux=funcionariosStruct[0].code;
+			strcpy(codeAux, textCode);
 			fprintf(file,"\nFuncionario: \n%s#\n", funcionariosStruct[0].employeeName);
 			fprintf(file, "Codigo: \n%d#\n", funcionariosStruct[0].code);
 			flush();
@@ -134,45 +134,48 @@ int salvamento(int option){
 				system("cls");
 			}
 			
-			int productCodes=0, products=4, produtctPrices=2, productCodeAux=0, productAux=0, productPriceAux=0;
-		char txt[30][30], input[50], product[30][50], productCode[30][50], productPrice[30][50];
-		int column = 0, canCopy=0;
-		int number = 0;
-			
-		while(!feof(file)){
-			if(fgets(txt[column],500,file)){
-			int line=0;
-			
-				do{
-					if(txt[column][line]=='#'){
-						txt[column][line]='\0';
-						break;
-					}
-					line++;
-				}while(txt[column][line]!='\n');
-			
-			
-				if(productCodes|| products || produtctPrices){
-					productCodes++;
-					products++;
-					produtctPrices++;
+			int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
+			char txt[30][30], input[50], product[30][50], productCode[30][50], productPrice[30][50], productStock[30][50];
+			int column = 0, canCopy=0;
+			int number = 0;
+						
+				while(!feof(file)){
+					if(fgets(txt[column],500,file)){
+					int line=0;
+						do{
+							if(txt[column][line]=='#'){
+								txt[column][line]='\0';
+								break;
+							}
+							line++;
+						}while(txt[column][line]!='\n');
+						if(productCodes|| products || produtctPrices){
+							productCodes++;
+							products++;
+							produtctPrices++;
+							productStocks++;
+						}
+						if(products%9==0){
+							strcpy(product[productAux], txt[column]);
+							number++;							
+							productAux++;
+							
+						}
+						if(produtctPrices%9==0){
+							strcpy(productPrice[productPriceAux], txt[column]);
+							productPriceAux++;
+						}
+						if(productCodes%9==0){
+							strcpy(productCode[productCodeAux], txt[column]);
+							productCodeAux++;
+						}
+						if(productStocks%9==0){
+							strcpy(productStock[productStockAux], txt[column]);
+							productStockAux++;
+						}
+						column++;
+					}	
 				}
-				if(products%7==0){
-					strcpy(product[productAux], txt[column]);
-					productAux++;
-					
-				}
-				if(produtctPrices%7==0){
-					strcpy(productPrice[productPriceAux], txt[column]);					
-					productPriceAux++;
-				}
-				if(productCodes%7==0){
-					strcpy(productCode[productCodeAux], txt[column]);					
-					productCodeAux++;
-				}
-				column++;
-			}	
-		}
 			int aux=column;
 			int doisFatoresNome=0;
 			int doisFatoresCodigo=0;
@@ -205,7 +208,7 @@ int salvamento(int option){
 					}
 				}
 				for(column=0;column<aux;column++){
-					if(strcmp(productCode[column],textCode)==0 && doisFatoresCodigo==0){
+					if(strcmp(productCode[column],textCode)==0 || strcmp(productCode[column], codeAux)==0 && doisFatoresCodigo==0){
 						printf("Codigo de produto já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
@@ -219,11 +222,14 @@ int salvamento(int option){
 			}
 			printf("\nDigite o preco do produto: ");
 			scanf("%f", &produtosStruct[0].price);
+			printf("\nDigite quantos produtos tem no estoque: ");
+			scanf("%d", &produtosStruct[0].stock);
 			
-			codeAux=produtosStruct[0].code;
-			fprintf(file,"\nFuncionario: \n%s#\n", produtosStruct[0].productName);
-			fprintf(file, "Codigo: \n%d#\n", produtosStruct[0].code);
+			strcpy(codeAux,textCode);
+			fprintf(file,"\nProduto: \n%s#\n", produtosStruct[0].productName);
 			fprintf(file, "Preco: \n%.2f#\n", produtosStruct[0].price);
+			fprintf(file, "Codigo: \n%d#\n", produtosStruct[0].code);
+			fprintf(file, "Estoque: \n%d#\n", produtosStruct[0].stock);
 			flush();
 			fclose(file);
 			
