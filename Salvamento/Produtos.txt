@@ -6,3 +6,16 @@ Preco:
 Codigo:
 15#
 
+Produto:
+JORGE#
+Preco:
+16.00#
+Codigo:
+16#
+
+Funcionario: 
+ARROZ#
+Codigo: 
+12#
+Preco: 
+15.75#

@@ -123,48 +123,57 @@ int salvamento(int option){
 	    system("pause");
 	}
 	if(option==2){
-		Funcionarios funcionariosStruct[1];
+		Produtos produtosStruct[1];
 		while(choice!=2){
 			
-	    	FILE * file = fopen("Funcionarios.txt", "a+");
+	    	FILE * file = fopen("Produtos.txt", "a+");
 	    	if(file==NULL){
 				printf("Erro ao abrir o arquivo\nCriando um arquivo novo :)");
-				FILE * file = fopen("Funcionarios.txt", "w");
+				FILE * file = fopen("Produtos.txt", "w");
 				system("pause");
 				system("cls");
 			}
 			
-			int codigos=0, funcionarios=2, codigoAux=0, funcionarioAux=0;
-			char funcionario[30][50], codigo[30][50];
-			int coluna = 0, canCopy=0;
+			int productCodes=0, products=4, produtctPrices=2, productCodeAux=0, productAux=0, productPriceAux=0;
+		char txt[30][30], input[50], product[30][50], productCode[30][50], productPrice[30][50];
+		int column = 0, canCopy=0;
+		int number = 0;
 			
-			while(!feof(file)){
-				if(fgets(txt[coluna],500,file)){
-				int linha=0;
-					do{
-						if(txt[coluna][linha]=='#'){
-							txt[coluna][linha]='\0';
-							break;
-						}
-						linha++;
-					}while(txt[coluna][linha]!='\n');
-
-					if(codigos || funcionarios){
-						codigos++;
-						funcionarios++;
+		while(!feof(file)){
+			if(fgets(txt[column],500,file)){
+			int line=0;
+			
+				do{
+					if(txt[column][line]=='#'){
+						txt[column][line]='\0';
+						break;
 					}
-					if(codigos%5==0){
-						strcpy(codigo[codigoAux], txt[coluna]);
-						codigoAux++;
-					}
-					if(funcionarios%5==0){
-						strcpy(funcionario[funcionarioAux], txt[coluna]);
-						funcionarioAux++;	
-					}
-					coluna++;
+					line++;
+				}while(txt[column][line]!='\n');
+			
+			
+				if(productCodes|| products || produtctPrices){
+					productCodes++;
+					products++;
+					produtctPrices++;
 				}
-			}
-			int aux=coluna;
+				if(products%7==0){
+					strcpy(product[productAux], txt[column]);
+					productAux++;
+					
+				}
+				if(produtctPrices%7==0){
+					strcpy(productPrice[productPriceAux], txt[column]);					
+					productPriceAux++;
+				}
+				if(productCodes%7==0){
+					strcpy(productCode[productCodeAux], txt[column]);					
+					productCodeAux++;
+				}
+				column++;
+			}	
+		}
+			int aux=column;
 			int doisFatoresNome=0;
 			int doisFatoresCodigo=0;
 	    	
@@ -173,19 +182,19 @@ int salvamento(int option){
 				
 				fflush(stdin);
 				if(doisFatoresNome==0){
-					printf("Digite o nome do Funcionario a ser cadastrado: ");
-					gets(funcionariosStruct[0].employeeName);
-					strupr(funcionariosStruct[0].employeeName);
+					printf("Digite o nome do produto a ser cadastrado: ");
+					gets(produtosStruct[0].productName);
+					strupr(produtosStruct[0].productName);
 				}
 				if(doisFatoresCodigo==0){
-					printf("Digite o codigo do funcionario a ser cadastrado: ");
-					scanf("%d", &funcionariosStruct[0].code);
-					sprintf(textCode,"%d",funcionariosStruct[0].code);
+					printf("Digite o codigo do produto a ser cadastrado: ");
+					scanf("%d", &produtosStruct[0].code);
+					sprintf(textCode,"%d",produtosStruct[0].code);
 				}
 				
-				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(funcionario[coluna],funcionariosStruct[0].employeeName)==0 && doisFatoresNome==0){
-						printf("\nNome de funcionario já cadastrado.\n\n");
+				for(column=0;column<aux;column++){
+					if(strcmp(product[column],produtosStruct[0].productName)==0 && doisFatoresNome==0){
+						printf("\nNome de produto já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
 						system("cls");
@@ -195,9 +204,9 @@ int salvamento(int option){
 						doisFatoresNome=1;
 					}
 				}
-				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(codigo[coluna],textCode)==0 && doisFatoresCodigo==0){
-						printf("Codigo de funcionario já cadastrado.\n\n");
+				for(column=0;column<aux;column++){
+					if(strcmp(productCode[column],textCode)==0 && doisFatoresCodigo==0){
+						printf("Codigo de produto já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
 						system("cls");
@@ -208,17 +217,22 @@ int salvamento(int option){
 					}
 				}	
 			}
-			codeAux=funcionariosStruct[0].code;
-			fprintf(file,"\nFuncionario: \n%s#\n", funcionariosStruct[0].employeeName);
-			fprintf(file, "Codigo: \n%d#\n", funcionariosStruct[0].code);
+			printf("\nDigite o preco do produto: ");
+			scanf("%f", &produtosStruct[0].price);
+			
+			codeAux=produtosStruct[0].code;
+			fprintf(file,"\nFuncionario: \n%s#\n", produtosStruct[0].productName);
+			fprintf(file, "Codigo: \n%d#\n", produtosStruct[0].code);
+			fprintf(file, "Preco: \n%.2f#\n", produtosStruct[0].price);
 			flush();
 			fclose(file);
-			printf("\nFuncionario: %s\nCodigo: %d\n", funcionariosStruct[0].employeeName, funcionariosStruct[0].code);
-			printf("\nDeseja cadastrar mais algum funcionario?\n[1]Sim\n[2]Nao\n");
+			
+			printf("\nFuncionario: %s\nCodigo: %d\nPreco: %.2f\n", produtosStruct[0].productName, produtosStruct[0].code, produtosStruct[0].price);
+			printf("\nDeseja cadastrar mais algum produto?\n[1]Sim\n[2]Nao\n");
 			scanf("%d", &choice);
 			system("cls");
 	    }
-	    printf("Obrigado por usar a plataforma de cadastro de funcionarios:)\n\n");
+	    printf("Obrigado por usar a plataforma de cadastro de produtos:)\n\n");
 	    system("pause");
 	}
 }

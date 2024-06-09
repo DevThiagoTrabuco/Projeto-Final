@@ -18,9 +18,52 @@ int leitura(int choice){
 		if(file==NULL)
 			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
 
-		fileOpenPrint(file);
-			fclose(file);
-		
+		int productCodes=0, products=4, produtctPrices=2, productCodeAux=0, productAux=0, productPriceAux=0;
+		char txt[30][30], input[50], product[30][50], productCode[30][50], productPrice[30][50];
+		int column = 0, canCopy=0;
+		int number = 0;
+			
+		while(!feof(file)){
+			if(fgets(txt[column],500,file)){
+			int line=0;
+			
+				do{
+					if(txt[column][line]=='#'){
+						txt[column][line]='\0';
+						break;
+					}
+					line++;
+				}while(txt[column][line]!='\n');
+			
+			
+				if(productCodes|| products || produtctPrices){
+					productCodes++;
+					products++;
+					produtctPrices++;
+				}
+				if(products%7==0){
+					strcpy(product[productAux], txt[column]);
+					number++;
+					printf("%d - Produto: %s\n", j,product[productAux]);
+					
+					productAux++;
+					
+				}
+				if(produtctPrices%7==0){
+					strcpy(productPrice[productPriceAux], txt[column]);
+					printf("Preco: %s\n", productPrice[productPriceAux]);
+					
+					productPriceAux++;
+				}
+				if(productCodes%7==0){
+					strcpy(productCode[productCodeAux], txt[column]);
+					printf("Codigo: %s\n\n", productCode[productCodeAux]);
+					productCodeAux++;
+				}
+				column++;
+			}	
+		}
+	
 	}
 	if(choice==3){//Login de funcionario
 		FILE * file = fopen("Funcionarios.txt", "r");
