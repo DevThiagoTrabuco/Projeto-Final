@@ -89,7 +89,14 @@ int comprar(int option){
 				strcpy(productStockString[inputAux], productStock);
 				printf("\nEstoque: %s\n", productStock);
 			}
-		}	
+		}
+		fclose(file);
+		FILE * file2 = fopen("Produtoss.txt", "w");
+		if(file==NULL)
+			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
+			
+		
+		
 	}
 }
 int main(){

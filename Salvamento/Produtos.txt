@@ -34,3 +34,12 @@ Codigo:
 25#
 Estoque: 
 20#
+
+Produto: 
+BOLAS#
+Preco: 
+10.00#
+Codigo: 
+9#
+Estoque: 
+2#
