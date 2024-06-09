@@ -91,7 +91,7 @@ int comprar(int option){
 			}
 		}
 		fclose(file);
-		FILE * file2 = fopen("Produtoss.txt", "w");
+		FILE * file2 = fopen("Produtos.txt", "w");
 		if(file==NULL)
 			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
 		int aux=0;
