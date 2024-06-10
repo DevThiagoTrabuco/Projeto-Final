@@ -22,7 +22,7 @@ int clientList(){
 			printf("\nDigite o seu email:\n");
 			gets(client[i].email);
 			printf("Digite a sua senha:\n");
-			scanf("%d", &client[i].password);
+			gets(client[i].password);
 			break;
 		case 'N': //cadastro (escreve no documento)			
 			printf("\nNome:\n");
@@ -32,7 +32,15 @@ int clientList(){
 			printf("Email:\n");
 			gets(client[i].email);
 			printf("Senha:\n");
-			scanf("%d", &client[i].password);
+			gets(client[i].password);
+			while(1){
+					if(strlen(client[i].password)<5){
+					printf("\nSenha fraca, digite uma nova senha: ");
+					gets(client[i].password);
+					}
+					else 
+					break;
+				}
 			fflush(stdin);
 			break;
 		default:
