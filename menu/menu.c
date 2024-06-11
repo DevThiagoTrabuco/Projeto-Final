@@ -4,6 +4,7 @@
 #include<math.h>
 #include<locale.h>
 #include<ctype.h>
+#include<windows.h>
 
 #include"saida.c"
 #include"cadastroCliente.c"
@@ -31,6 +32,8 @@ void menu(){
 					exit = getOut();
                 	break;
 				default:
+					printf("Opção inválida.\n");
+					Sleep(500);
 					break;
 			}
 			system("cls");

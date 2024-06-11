@@ -44,7 +44,9 @@ int clientList(){
 			fflush(stdin);
 			break;
 		default:
-			break;
+			printf("Opção inválida\n");
+			system("pause");
+			return 0;
 	}
 	system("pause");
 }
