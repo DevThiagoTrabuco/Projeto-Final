@@ -9,15 +9,6 @@ Estoque:
 50#
 
 Produto: 
-JORGE#
-Preco: 
-16.00#
-Codigo: 
-16#
-Estoque: 
-500#
-
-Produto: 
 ARROZ#
 Preco: 
 15.69#

@@ -134,10 +134,9 @@ int salvamento(int option){
 				system("cls");
 			}
 			
-			int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
+			int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0, number=0;
 			char txt[30][30], input[50], product[30][50], productCode[30][50], productPrice[30][50], productStock[30][50];
-			int column = 0, canCopy=0;
-			int number = 0;
+			int column = 0, canCopy=0;			
 						
 				while(!feof(file)){
 					if(fgets(txt[column],500,file)){
@@ -159,7 +158,6 @@ int salvamento(int option){
 							strcpy(product[productAux], txt[column]);
 							number++;							
 							productAux++;
-							
 						}
 						if(produtctPrices%9==0){
 							strcpy(productPrice[productPriceAux], txt[column]);
@@ -176,26 +174,27 @@ int salvamento(int option){
 						column++;
 					}	
 				}
-			int aux=column;
+			int aux=number;
 			int doisFatoresNome=0;
 			int doisFatoresCodigo=0;
 	    	
-			while(canCopy==0){
+			while(canCopy==0 && canCopy==0){
 				canCopy=1;
-				
 				fflush(stdin);
+				
 				if(doisFatoresNome==0){
 					printf("Digite o nome do produto a ser cadastrado: ");
 					gets(produtosStruct[0].productName);
-					strupr(produtosStruct[0].productName);
+					strupr(produtosStruct[0].productName);	
+					fflush(stdin);
 				}
 				if(doisFatoresCodigo==0){
 					printf("Digite o codigo do produto a ser cadastrado: ");
 					scanf("%d", &produtosStruct[0].code);
 					sprintf(textCode,"%d",produtosStruct[0].code);
 				}
-				
-				for(column=0;column<aux;column++){
+
+				for(column=0;column<aux;column++){					
 					if(strcmp(product[column],produtosStruct[0].productName)==0 && doisFatoresNome==0){
 						printf("\nNome de produto já cadastrado.\n\n");
 						canCopy=0;
@@ -204,13 +203,14 @@ int salvamento(int option){
 						break;
 					}
 					else{
-						doisFatoresNome=1;
+						doisFatoresCodigo=1;
 					}
 				}
 				for(column=0;column<aux;column++){
 					if(strcmp(productCode[column],textCode)==0 || strcmp(productCode[column], codeAux)==0 && doisFatoresCodigo==0){
 						printf("Codigo de produto já cadastrado.\n\n");
 						canCopy=0;
+						doisFatoresCodigo=0;
 						Sleep(2000);
 						system("cls");
 						break;
@@ -233,7 +233,7 @@ int salvamento(int option){
 			flush();
 			fclose(file);
 			
-			printf("\nFuncionario: %s\nCodigo: %d\nPreco: %.2f\n", produtosStruct[0].productName, produtosStruct[0].code, produtosStruct[0].price);
+			printf("\nProduto: %s\nCodigo: %d\nPreco: %.2f\n", produtosStruct[0].productName, produtosStruct[0].code, produtosStruct[0].price);
 			printf("\nDeseja cadastrar mais algum produto?\n[1]Sim\n[2]Nao\n");
 			scanf("%d", &choice);
 			system("cls");
