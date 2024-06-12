@@ -3,69 +3,49 @@
 #include <string.h>
 
 #include "flush.c"
-#include "fileOpenPrint.c"
 
 int leitura(int choice){
 	if(choice==1){//Lista de funcionarios
 	FILE * file = fopen("Funcionarios.txt", "r");
 	if(file==NULL)
 		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
-		fileOpenPrint(file);
+		int codigos=0, funcionarios=2, codigoAux=0, funcionarioAux=0;
+			char txt[30][30], input[50], funcionario[30][50], codigo[30][50];
+			int coluna = 0, canCopy=0;
+			
+			while(!feof(file)){
+				if(fgets(txt[coluna],500,file)){
+				int linha=0;
+					do{
+						if(txt[coluna][linha]=='#'){
+							txt[coluna][linha]='\0';
+							break;
+						}
+						linha++;
+					}while(txt[coluna][linha]!='\n');
+				
+					if(codigos|| funcionarios){
+						codigos++;
+						funcionarios++;
+					}
+					if(codigos%5==0){
+						strcpy(codigo[codigoAux], txt[coluna]);
+						printf("\nCodigo: %s", codigo[codigoAux]);
+						codigoAux++;
+						
+					}
+					if(funcionarios%5==0){
+						strcpy(funcionario[funcionarioAux], txt[coluna]);
+						printf("\nFuncionario: %s", funcionario[funcionarioAux]);
+						funcionarioAux++;
+					}
+					coluna++;
+				}
+			}
 		fclose(file);
 	}
-	if(choice==2){//Lista de produtos
-		FILE * file = fopen("Produtos.txt", "r");
-		if(file==NULL)
-			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
-
-		int productCodes=0, products=4, produtctPrices=2, productCodeAux=0, productAux=0, productPriceAux=0;
-		char txt[30][30], input[50], product[30][50], productCode[30][50], productPrice[30][50];
-		int column = 0, canCopy=0;
-		int number = 0;
-			
-		while(!feof(file)){
-			if(fgets(txt[column],500,file)){
-			int line=0;
-			
-				do{
-					if(txt[column][line]=='#'){
-						txt[column][line]='\0';
-						break;
-					}
-					line++;
-				}while(txt[column][line]!='\n');
-			
-			
-				if(productCodes|| products || produtctPrices){
-					productCodes++;
-					products++;
-					produtctPrices++;
-				}
-				if(products%7==0){
-					strcpy(product[productAux], txt[column]);
-					number++;
-					printf("%d - Produto: %s\n", j,product[productAux]);
-					
-					productAux++;
-					
-				}
-				if(produtctPrices%7==0){
-					strcpy(productPrice[productPriceAux], txt[column]);
-					printf("Preco: %s\n", productPrice[productPriceAux]);
-					
-					productPriceAux++;
-				}
-				if(productCodes%7==0){
-					strcpy(productCode[productCodeAux], txt[column]);
-					printf("Codigo: %s\n\n", productCode[productCodeAux]);
-					productCodeAux++;
-				}
-				column++;
-			}	
-		}
 	
-	}
-	if(choice==3){//Login de funcionario
+	if(choice==2){//Login de funcionario
 		FILE * file = fopen("Funcionarios.txt", "r");
 		if(file==NULL)
 			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
@@ -126,13 +106,12 @@ int leitura(int choice){
 				}	
 				system("cls");
 			}
-				
 		fclose(file);
 	}
 	
 }
 
 int main(){
-	int choice=2;
+	int choice=1;
 	leitura(choice);
 }

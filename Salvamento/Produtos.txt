@@ -25,3 +25,12 @@ Codigo:
 9#
 Estoque: 
 2#
+
+Produto: 
+JORGE#
+Preco: 
+15.75#
+Codigo: 
+23#
+Estoque: 
+54#
