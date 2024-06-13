@@ -2,13 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "flush.c"
+#include "CadastrarClientes.c"
 
-int loginClient(){
-	
+int loginClient(){	
 	char txt[30][30], textCode[50], codeAux[20];
 	
-		
     	FILE * file = fopen("Clientes.txt", "a+");
     	if(file==NULL){
 			printf("Erro ao abrir o arquivo\nCriando um arquivo novo :)");
@@ -81,6 +79,8 @@ int loginClient(){
 						scanf("%c", &choice);
 						if(choice=='S' || choice=='s'){
 							printf("redirecionando para a pagina de cadastro");
+							system("cls");
+							cadastrarClientes();
 						}
 					fflush(stdin);
 				}

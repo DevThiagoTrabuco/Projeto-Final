@@ -53,13 +53,11 @@ void cadastrarClientes(){
 						passwords++;
 					}
 					if(clientNames%7==0){
-						strcpy(clientName[clientNameAux], txt[coluna]);
-						printf("\nCliente: %s", clientName[clientNameAux]);
+						strcpy(clientName[clientNameAux], txt[coluna]);						
 						clientNameAux++;
 					}
 					if(emails%7==0){
-						strcpy(email[emailsAux], txt[coluna]);
-						printf("\nEmail: %s", email[emailsAux]);
+						strcpy(email[emailsAux], txt[coluna]);				
 						emailsAux++;	
 					}
 					coluna++;
@@ -137,7 +135,4 @@ void cadastrarClientes(){
 	    }
 	    printf("Obrigado por usar a plataforma de cadastro de funcionarios:)\n\n");
 	    system("pause");
-	}
-	int main(){
-		cadastrarClientes();
 	}
