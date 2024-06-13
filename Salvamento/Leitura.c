@@ -4,7 +4,7 @@
 
 #include "flush.c"
 
-int leitura(int choice){
+int loginFuncionario(int choice){
 	if(choice==1){//Lista de funcionarios
 	FILE * file = fopen("Funcionarios.txt", "r");
 	if(file==NULL)
@@ -83,7 +83,7 @@ int leitura(int choice){
 			}
 			int aux=coluna;
 
-			while(canCopy==0){
+			while(1){
 				printf("Digite seu nome: ");
 				gets(input);
 				fflush(stdin);
@@ -108,7 +108,6 @@ int leitura(int choice){
 			}
 		fclose(file);
 	}
-	
 }
 
 int main(){

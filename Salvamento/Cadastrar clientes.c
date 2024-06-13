@@ -33,7 +33,7 @@ void cadastrarClientes(){
 			}
 			
 			int clientNames=4, emails=2, passwords=0, clientNameAux=0 , clientFirstNameAux=0, clientSurNameAux=0, emailsAux=0,  passwordAux=0;
-			char clientName[30][50], clientFirstName[30][50], clientSurName[30][50], email[30][50], password[30][50];
+			char clientName[30][50], email[30][50], password[30][50];
 			int coluna = 0, canCopy=0;
 			
 			while(!feof(file)){
@@ -53,8 +53,8 @@ void cadastrarClientes(){
 						passwords++;
 					}
 					if(clientNames%7==0){
-						strcpy(clientName[clientFirstNameAux], txt[coluna]);
-						printf("\nCliente: %s", clientName[clientFirstNameAux]);
+						strcpy(clientName[clientNameAux], txt[coluna]);
+						printf("\nCliente: %s", clientName[clientNameAux]);
 						clientNameAux++;
 					}
 					if(emails%7==0){
@@ -114,12 +114,13 @@ void cadastrarClientes(){
 							printf("\nRedirecionando a pagina de login\n");
 							Sleep(2000);
 						}
-						else if(choiceEmail=='N'|| choiceEmail=='n'){
+						else {
 							system("cls");
 							printf("\nDigite o e-mail do Cliente a ser cadastrado: ");
 							gets(client[0].email);
 							strupr(client[0].email);
 						}
+
 						break;
 					}
 				}
