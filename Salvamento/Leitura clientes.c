@@ -4,7 +4,7 @@
 
 #include "flush.c"
 
-int loginCliente(){
+int loginClient(){
 	
 	char txt[30][30], textCode[50], codeAux[20];
 	
@@ -101,5 +101,5 @@ int loginCliente(){
 		fclose(file);
 }
 int main(){
-	loginCliente();
+	loginClient();
 }
