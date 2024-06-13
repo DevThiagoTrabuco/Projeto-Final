@@ -65,12 +65,13 @@ void cadastrarClientes(){
 					coluna++;
 				}
 			}
-			int aux=coluna;
+			int aux=clientNameAux;
 			int doisFatoresNome=0;
 			int doisFatoresSobreNome=0;
 			int doisFatoresSenha=0;
-	    		int doisFatoresEmail=0;
-	    		
+	    	int doisFatoresEmail=0;
+	    	char choiceEmail;
+	    	
 			while(canCopy==0){
 				canCopy=1;
 				
@@ -98,17 +99,28 @@ void cadastrarClientes(){
 					printf("\nDigite o e-mail do Cliente a ser cadastrado: ");
 					gets(client[0].email);
 					strupr(client[0].email);
+					doisFatoresEmail=1;
 				}
 				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(email[coluna],client[0].email)==0 && doisFatoresNome==0){
-						printf("\nEmail de cliente j� cadastrado.\n\n");
+					if(strcmp(email[coluna], client[0].email)==0){
+						printf("\nEmail de cliente já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
-						system("cls");
+						printf("\nDeseja ir para a pagina de login?\nSim\nNão\n");
+						scanf("%c", &choiceEmail);
+						fflush(stdin);
+						
+						if(choiceEmail=='S'|| choiceEmail=='s'){
+							printf("\nRedirecionando a pagina de login\n");
+							Sleep(2000);
+						}
+						else if(choiceEmail=='N'|| choiceEmail=='n'){
+							system("cls");
+							printf("\nDigite o e-mail do Cliente a ser cadastrado: ");
+							gets(client[0].email);
+							strupr(client[0].email);
+						}
 						break;
-					}
-					else{
-						doisFatoresEmail=1;
 					}
 				}
 			}
