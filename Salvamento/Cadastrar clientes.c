@@ -113,9 +113,9 @@ void cadastrarClientes(){
 				}
 			}
 			fprintf(file,"\nCliente: \n%s#\n", client[0].name);
-			fprintf(file, "\nEmail: \n%s#\n", client[0].email);
-			fprintf(file, "\nSenha: \n%s#\n", client[0].password);
-			flush();
+			fprintf(file, "Email: \n%s#\n", client[0].email);
+			fprintf(file, "Senha: \n%s#\n", client[0].password);
+			
 			fclose(file);
 			
 			printf("\nDeseja cadastrar mais algum cliente?\n[1]Sim\n[2]Nao\n");
