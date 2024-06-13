@@ -82,20 +82,20 @@ int loginCliente(){
 						if(choice=='S' || choice=='s'){
 							printf("redirecionando para a pagina de cadastro");
 						}
+					fflush(stdin);
 				}
 			}
-			fflush(stdin);
 			if(canCopyPassword==1){
-				printf("Agora digite a senha: ");
-			gets(senhaInput);	
-			if(strcmp(password[aux],senhaInput)==0){
-				return 1;
-			}
-			else{
-				printf("\nSenha incorreta digite novamente.\n");
-				system("pause");
-			}	
-			system("cls");
+				printf("\nUsuario: %s\nAgora digite a senha: ", emailInput);
+				gets(senhaInput);	
+				if(strcmp(password[aux],senhaInput)==0){
+					return 1;
+				}
+				else{
+					printf("\nSenha incorreta digite novamente.\n");
+					system("pause");
+				}	
+				system("cls");
 			}
 		}
 		fclose(file);
