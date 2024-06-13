@@ -77,7 +77,7 @@ int loginClient(){
 					}
 				}
 				if(canCopyEmail==0){
-						printf("\nEmail nao encontrado no banco de dados, deseja prosseguir para o cadastro?\nSim\nNao\n");
+						printf("\nEmail nao encontrado no banco de dados, deseja prosseguir para o cadastro?\nSim.\nNao.\n");
 						scanf("%c", &choice);
 						if(choice=='S' || choice=='s'){
 							printf("redirecionando para a pagina de cadastro");
