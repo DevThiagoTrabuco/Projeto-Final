@@ -82,18 +82,25 @@ int loginFuncionario(int choice){
 				}
 			}
 			int aux=coluna;
-
+			int canCopyName=0;
+			int canCopyCode=0;
+			char inputName[50];
+			char inputCode[50];
+			
 			while(1){
-				printf("Digite seu nome: ");
-				gets(input);
-				fflush(stdin);
-				strupr(input);
-				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(funcionario[coluna],input)==0){
-						aux=coluna;
-						break;
+				if(canCopyName==0){
+					printf("Digite seu nome: ");
+					gets(input);
+					fflush(stdin);
+					strupr(inputName);
+					for(coluna=0;coluna<aux;coluna++){
+						if(strcmp(funcionario[coluna],inputName)==0){
+							aux=coluna;
+							break;
+						}
 					}
 				}
+				
 				fflush(stdin);
 				printf("Agora digite o codigo: ");
 				gets(input);	
@@ -111,6 +118,6 @@ int loginFuncionario(int choice){
 }
 
 int main(){
-	int choice=1;
-	leitura(choice);
+	int choice=2;
+	loginFuncionario(choice);
 }

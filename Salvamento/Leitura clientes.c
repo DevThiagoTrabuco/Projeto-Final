@@ -39,12 +39,12 @@ int loginCliente(){
 				}
 				if(clientNames%7==0){
 					strcpy(clientName[clientNameAux], txt[coluna]);
-					printf("\nCliente: %s", clientName[clientNameAux]);
+					
 					clientNameAux++;
 				}
 				if(emails%7==0){
 					strcpy(email[emailsAux], txt[coluna]);
-					printf("\nEmail: %s", email[emailsAux]);
+					
 					emailsAux++;	
 				}
 				if(passwords%7==0){
@@ -75,16 +75,13 @@ int loginCliente(){
 						canCopyEmail=1;
 						break;
 					}
-					else{
-						printf("\nEmail nao encontrado no banco de dados, deseja prosseguir para o cadastro?\nSim\nNao");
+				}
+				if(canCopyEmail==0){
+						printf("\nEmail nao encontrado no banco de dados, deseja prosseguir para o cadastro?\nSim\nNao\n");
 						scanf("%c", &choice);
 						if(choice=='S' || choice=='s'){
-							printf("\nRedirecionando para a pagina de cadastro\n");
+							printf("redirecionando para a pagina de cadastro");
 						}
-						else{
-							continue;
-						}
-					}
 				}
 			}
 			fflush(stdin);
