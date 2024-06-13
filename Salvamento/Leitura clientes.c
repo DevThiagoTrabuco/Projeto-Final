@@ -19,18 +19,18 @@ int loginCliente(){
 		
 		int clientNames=4, emails=2, passwords=0, clientNameAux=0 , clientFirstNameAux=0, clientSurNameAux=0, emailsAux=0,  passwordAux=0;
 		char clientName[30][50], email[30][50], password[30][50];
-		int coluna = 0, canCopy=0;
+		int column = 0, canCopy=0;
 		
 		while(!feof(file)){
-			if(fgets(txt[coluna],500,file)){
-			int linha=0;
+			if(fgets(txt[column],500,file)){
+			int line=0;
 				do{
-					if(txt[coluna][linha]=='#'){
-						txt[coluna][linha]='\0';
+					if(txt[column][line]=='#'){
+						txt[column][line]='\0';
 						break;
 					}
-					linha++;
-				}while(txt[coluna][linha]!='\n');
+					line++;
+				}while(txt[column][line]!='\n');
 
 				if(clientNames ||  emails || passwords){
 					clientNames++;
@@ -38,27 +38,27 @@ int loginCliente(){
 					passwords++;
 				}
 				if(clientNames%7==0){
-					strcpy(clientName[clientNameAux], txt[coluna]);
+					strcpy(clientName[clientNameAux], txt[column]);
 					
 					clientNameAux++;
 				}
 				if(emails%7==0){
-					strcpy(email[emailsAux], txt[coluna]);
+					strcpy(email[emailsAux], txt[column]);
 					
 					emailsAux++;	
 				}
 				if(passwords%7==0){
-					strcpy(password[passwordAux], txt[coluna]);
+					strcpy(password[passwordAux], txt[column]);
 					passwordAux++;
 				}
-				coluna++;
+				column++;
 			}
 		}
 		int aux=clientNameAux;
 		int canCopyEmail=0;
 		int canCopyPassword=0;
 		char emailInput[50];
-		char senhaInput[50];
+		char passwordInput[50];
 		char choice;
 		
 		while(1){
@@ -68,9 +68,9 @@ int loginCliente(){
 				gets(emailInput);
 				fflush(stdin);
 				strupr(emailInput);
-				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(email[coluna],emailInput)==0){
-						aux=coluna;
+				for(column=0;column<aux;column++){
+					if(strcmp(email[column],emailInput)==0){
+						aux=column;
 						canCopyPassword=1;
 						canCopyEmail=1;
 						break;
@@ -87,8 +87,8 @@ int loginCliente(){
 			}
 			if(canCopyPassword==1){
 				printf("\nUsuario: %s\nAgora digite a senha: ", emailInput);
-				gets(senhaInput);	
-				if(strcmp(password[aux],senhaInput)==0){
+				gets(passwordInput);	
+				if(strcmp(password[aux],passwordInput)==0){
 					return 1;
 				}
 				else{
