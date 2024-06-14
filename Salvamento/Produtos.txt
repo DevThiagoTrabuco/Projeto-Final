@@ -15,7 +15,7 @@ Preco:
 Codigo: 
 25#
 Estoque: 
-20#
+18#
 
 Produto: 
 BOLAS#

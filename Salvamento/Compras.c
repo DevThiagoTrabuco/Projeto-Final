@@ -60,10 +60,11 @@ void comprar(){
 	int input;
 	int inputAux;
 	int repeats=0;
+	int endWhile=0;
 	
 	file=fopen("ListaDeCompras.txt", "w");
 	
-	while(input!=75){
+	while(endWhile==0){
 		if(repeats!=0){
 			file=fopen("ListaDeCompras.txt", "a+");
 		}
@@ -131,12 +132,11 @@ void comprar(){
 				}
 				break;
 			case 2:
-				carrinho();
-				break;
-		}
-		
+				if(carrinho()!=-1){
+					endWhile=1;
+				}
+		}	
 	}
-	
 	FILE * file2 = fopen("Produtos.txt", "w");
 	if(file2==NULL)
 		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
@@ -148,6 +148,7 @@ void comprar(){
 		fprintf(file2, "Estoque: \n%s#\n", productStockString[aux]);
 		aux++;
 	}
+	fclose(file2);
 }
 int main(){
 	int option=2;
