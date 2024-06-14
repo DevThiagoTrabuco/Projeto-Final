@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 #include "flush.c"
+#include "Carrinho.c"
 void comprar(){
 	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
 	char txt[200], productString[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
@@ -67,61 +68,73 @@ void comprar(){
 			file=fopen("ListaDeCompras.txt", "a+");
 		}
 		system("cls");
-		for(int i=0;i<number;i++){
-			printf("%d - \tProduto: %s\n", i+1,productString[i]);
-			printf("\tPreco: %s\n", productPriceString[i]);
-			printf("\tCodigo: %s\n\n", productCodeString[i]);
-		}
-		printf("\nQual produto deseja adicionar no carrinho?\n");
+		
+		printf("\nO que deseja fazer?\n1-Lista de compras\n2-Carrinho\n");
 		scanf("%d", &input);
 		flush();
+		switch(input){
+			case 1:
+				for(int i=0;i<number;i++){
+					printf("%d - \tProduto: %s\n", i+1,productString[i]);
+					printf("\tPreco: %s\n", productPriceString[i]);
+					printf("\tCodigo: %s\n\n", productCodeString[i]);
+				}
+				printf("\nQual produto deseja adicionar no carrinho?\n");
+				scanf("%d", &input);
+				flush();
+				
+				inputAux=input-1;
+				if(input<0){
+					printf("\nOpcao invalida.\n");
+					system("pause");
+					system("cls");
+					continue;
+				}
+				if(input==0){
+					continue;
+				}
+				if(input>number){
+					printf("Produto nao existe");
+					flush();
+					system("pause");
+					system("cls");
+					continue;
+				}
+				printf("O produto selecionado e o %s\n", productString[inputAux]);
+				printf("Digite quantos %s voce deseja: ", productString[inputAux]);
+				scanf("%d", &input);
+				productStockAux=input;
+				if(productStockAux>atoi(productStockString[inputAux])){
+					printf("\nNumero de produtos excede o estoque\n");
+					system("pause");
+					continue;
+				}
+				if(input==0){
+					continue;
+				}
+				if(input<0){
+					printf("\nOpcao invalida.\n");
+					system("pause");
+					system("cls");
+				}
+				else{
+					productPriceFloat=atof(productPriceString[inputAux])*input;
+					productStockAux=atoi(productStockString[inputAux])-productStockAux;
+					sprintf(productStock,"%d", productStockAux);
+					strcpy(productStockString[inputAux], productStock);
+					
+					fprintf(file,"\nProduto: \n%s#\n", productString[inputAux]);
+					fprintf(file, "Quantidade: \n%d#\n", input);
+					fprintf(file, "Preço: \n%.2f#\n", productPriceFloat);
+					fclose(file);
+					repeats++;
+				}
+				break;
+			case 2:
+				carrinho();
+				break;
+		}
 		
-		inputAux=input-1;
-		if(input<0){
-			printf("\nOpcao invalida.\n");
-			system("pause");
-			system("cls");
-			continue;
-		}
-		if(input==0){
-			continue;
-		}
-		if(input>number){
-			printf("Produto nao existe");
-			flush();
-			system("pause");
-			system("cls");
-			continue;
-		}
-		printf("O produto selecionado e o %s\n", productString[inputAux]);
-		printf("Digite quantos %s voce deseja: ", productString[inputAux]);
-		scanf("%d", &input);
-		productStockAux=input;
-		if(productStockAux>atoi(productStockString[inputAux])){
-			printf("\nNumero de produtos excede o estoque\n");
-			system("pause");
-			continue;
-		}
-		if(input==0){
-			continue;
-		}
-		if(input<0){
-			printf("\nOpcao invalida.\n");
-			system("pause");
-			system("cls");
-		}
-		else{
-			productPriceFloat=atof(productPriceString[inputAux])*input;
-			productStockAux=atoi(productStockString[inputAux])-productStockAux;
-			sprintf(productStock,"%d", productStockAux);
-			strcpy(productStockString[inputAux], productStock);
-			
-			fprintf(file,"\nProduto: \n%s#\n", productString[inputAux]);
-			fprintf(file, "Quantidade: \n%d#\n", input);
-			fprintf(file, "Preço: \n%.2f#\n", productPriceFloat);
-			fclose(file);
-			repeats++;
-		}
 	}
 	
 	FILE * file2 = fopen("Produtos.txt", "w");

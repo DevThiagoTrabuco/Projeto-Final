@@ -52,11 +52,12 @@ int carrinho(){
 		float totalPrice;
 		float unityPrice;
 		int choice;
+		int choicePrincipalMenu=0;
 		int choiceAux;
 		int aux=productQuantityAux;
 		char unityAux[10];
 		
-		while(1){
+		while(choicePrincipalMenu!=3){
 			system("cls");
 			totalPrice=0;
 			
@@ -70,11 +71,12 @@ int carrinho(){
 				totalPrice=totalPrice+atof(productPriceString[i]);
 			}
 			printf("\nValor total das compras: R$%.2f\n\nDigite uma opcao\n1-Finalizar Compra.\n2-Editar Pedido.\n3-Voltar as Compras.\n", totalPrice);
-			scanf("%d", &choice);
-			switch(choice){
+			scanf("%d", &choicePrincipalMenu);
+			switch(choicePrincipalMenu){
 				case 1:
 					printf("\nFinalizando a compra.");
 					Sleep(2000);
+					return totalPrice;
 					break;
 				case 2:
 					fflush(stdin);
@@ -91,6 +93,30 @@ int carrinho(){
 					printf("\nO que deseja fazer?\n1-Adicionar unidades ao carrinho\n2-Retirar unidades do carrinho.\n");
 					scanf("%d", &choice);
 					switch(choice){
+						case 1:
+							printf("\nPara qual produto quer adicionar?\n");
+							scanf("%d", &choice);
+							if(choice>aux){
+								printf("\nProduto inexistente.\n");
+								Sleep(1000);
+								continue;
+							}
+							choiceAux=choice;
+							fflush(stdin);
+							printf("\nProduto: %s selecionado.\nQuantas unidades deseja adicionar? ", productString[choiceAux-1]);
+							scanf("%d", &choice);
+							
+							unityPrice=atof(productPriceString[choiceAux-1])/atoi(productQuantityString[choiceAux-1]);
+							unityPrice=unityPrice*(choice+atoi(productQuantityString[choiceAux-1]));
+							
+							choice=atoi(productQuantityString[choiceAux-1])+choice;
+							sprintf(unityAux,"%d", choice);
+							strcpy(productQuantityString[choiceAux-1], unityAux);
+							
+							sprintf(unityAux,"%.2f", unityPrice);
+							strcpy(productPriceString[choiceAux-1], unityAux);
+							
+							break;
 						case 2:
 							printf("\nDe qual produto deseja retirar?\n");
 							scanf("%d", &choice);
@@ -116,13 +142,13 @@ int carrinho(){
 								strcpy(productPriceString[choiceAux-1],"0.00");
 							}
 							fflush(stdin);
+							break;
 					}
+				case 3:
+					break;
 			}
 			
 		}
 		
 		
-}
-int main(){
-	carrinho();
 }

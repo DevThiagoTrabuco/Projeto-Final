@@ -1,14 +1,14 @@
 
 Produto: 
-JILSON#
-Quantidade: 
-4#
-Preço: 
-60.00#
-
-Produto: 
-JORGE#
+ARROZ#
 Quantidade: 
 2#
 Preço: 
-31.50#
+31.38#
+
+Produto: 
+BOLAS#
+Quantidade: 
+2#
+Preço: 
+20.00#
