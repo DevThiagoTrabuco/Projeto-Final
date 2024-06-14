@@ -7,7 +7,7 @@
 int carrinho(){
 	int  products=4, produtctPrices=0, productQuantity=2,productAux=0, productPriceAux=0, productQuantityAux=0;
 	char txt[200], productString[30][50], productPriceString[30][50], productQuantityString[30][50];	
-	int column = 0, canCopy=0;
+	int column = 0;
 	int number = 0;
 	
 		FILE * file=fopen("ListaDeCompras.txt", "r");
