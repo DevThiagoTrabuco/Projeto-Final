@@ -46,9 +46,7 @@ int carrinho(){
 					strcpy(productQuantityString[productQuantityAux], txt);	
 					productQuantityAux++;
 				}
-			
 			}
-		
 		}	
 		fclose(file);
 		float totalPrice=0.0;
