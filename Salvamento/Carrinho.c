@@ -35,18 +35,15 @@ int carrinho(){
 				if(products%7==0){
 					strcpy(productString[productAux], txt);
 					number++;
-					printf("\n%d Produto: %s\n", number, productString[productAux]);			
 					productAux++;
 					
 				}
 				if(produtctPrices%7==0){
 					strcpy(productPriceString[productPriceAux], txt);	
-					printf("Preço total: %s\n", productPriceString[productPriceAux]);				
 					productPriceAux++;
 				}
 				if(productQuantity%7==0){
 					strcpy(productQuantityString[productQuantityAux], txt);	
-					printf("Quantidade: %s\n", productQuantityString[productQuantityAux]);				
 					productQuantityAux++;
 				}
 			
@@ -57,33 +54,63 @@ int carrinho(){
 		float totalPrice=0.0;
 		float unityPrice=0.0;
 		int choice;
+		int choiceAux;
+		int aux=productQuantityAux;
+		char unityAux[10];
 		
-		printf("\nDigite uma opcao\n1-Finalizar Compra.\n2-Editar Pedido.\n3-Voltar as Compras.\n");
-		scanf("%d", &choice);
-		switch(choice){
-			case 1:
-				printf("\nFinalizando a compra.");
-				Sleep(2000);
-				break;
-			case 2:
-				fflush(stdin);
-				system("cls");
-				printf("\nEditando pedido\n");
-				for(int i=0; i<productQuantityAux;i++){
-					printf("\n%d Produto: %s\n", i+1, productString[i]);
-					printf("Quantidade: %s\n", productQuantityString[i]);
-					printf("Preço total: %s\n", productPriceString[i]);
+		while(1){
+			system("cls");
+			for(int i=0; i<aux;i++){
+				if( productQuantityString[i]==0){
+					continue;
 				}
-				printf("\nO que deseja fazer?\n1-Retirar uma unidade\n2-Retirar todos os produtos do carrinho.\n");
-				scanf("%d", &choice);
-				switch(choice){
-					case 1:
-						printf("\nDe qual produto deseja retirar?\n");
-						scanf("%d", &choice);
-						fflush(stdin);
-						printf("\nProduto: %s selecionado\n", productString[choice-1]);
-				}
+				printf("\n%d Produto: %s\n", i+1, productString[i]);
+				printf("Quantidade: %s\n", productQuantityString[i]);
+				printf("Preço total: %s\n", productPriceString[i]);
+			}
+			printf("\nDigite uma opcao\n1-Finalizar Compra.\n2-Editar Pedido.\n3-Voltar as Compras.\n");
+			scanf("%d", &choice);
+			switch(choice){
+				case 1:
+					printf("\nFinalizando a compra.");
+					Sleep(2000);
+					break;
+				case 2:
+					fflush(stdin);
+					system("cls");
+					printf("\nEditando pedido\n");
+					for(int i=0; i<aux;i++){
+						if( productQuantityString[i]==0){
+							continue;
+						}
+						printf("\n%d Produto: %s\n", i+1, productString[i]);
+						printf("Quantidade: %s\n", productQuantityString[i]);
+						printf("Preço total: %s\n", productPriceString[i]);
+					}
+					printf("\nO que deseja fazer?\n1-Retirar unidades\n2-Retirar todos os produtos do carrinho.\n");
+					scanf("%d", &choice);
+					switch(choice){
+						case 1:
+							printf("\nDe qual produto deseja retirar?\n");
+							scanf("%d", &choice);
+							if(choice>aux){
+								printf("\nProduto inexistente.\n");
+								Sleep(1000);
+								continue;
+							}
+							choiceAux=choice;
+							fflush(stdin);
+							printf("\nProduto: %s selecionado.\nQuantas unidades deseja retirar? ", productString[choiceAux-1]);
+							scanf("%d", &choice);
+							choice=atoi(productQuantityString[choiceAux-1])-choice;
+							sprintf(unityAux,"%d", choice);
+							strcpy(productQuantityString[choiceAux-1], unityAux);
+							fflush(stdin);
+					}
+			}
+			
 		}
+		
 		
 }
 int main(){
