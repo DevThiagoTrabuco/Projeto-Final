@@ -8,6 +8,7 @@
 
 #include"saida.c"
 #include"cadastroCliente.c"
+#include"retornar.c"
 
 void menu(){
 	char op, op2;
@@ -22,11 +23,17 @@ void menu(){
 			
 			switch(op){
 				case '1'://login/cadastro de cliente
-					clientList();
+					//clientList();
+					getBack();
+					break;
+				case '2'://lista de produtos
+					getBack();
 					break;
 				case '3'://carrinho
+					getBack();
 					break;
-				case '4'://área dos funcionários
+				case '4'://área restrita
+					getBack();
 					break;
 				case '5'://sair da aplicação
 					exit = getOut();

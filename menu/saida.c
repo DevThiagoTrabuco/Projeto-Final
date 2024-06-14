@@ -4,8 +4,8 @@ int getOut(){
 		
 	printf("Deseja sair?(S/N): ");
     scanf("%c", &op);
-    fflush(stdin);
 	strupr(op);
+    fflush(stdin);
 	
 	switch(op[0]){
 		case 'S':
