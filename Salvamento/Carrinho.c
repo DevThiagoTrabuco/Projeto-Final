@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include<windows.h>
 
-int carrinho(){
+int carrinho(int *answerPointer){
 	int  products=4, produtctPrices=0, productQuantity=2,productAux=0, productPriceAux=0, productQuantityAux=0;
 	char txt[200], productString[30][50], productPriceString[30][50], productQuantityString[30][50];	
 	int column = 0;
@@ -76,6 +76,7 @@ int carrinho(){
 				case 1:
 					printf("\nFinalizando a compra.");
 					Sleep(2000);
+					*answerPointer+=1;
 					return totalPrice;
 					break;
 				case 2:

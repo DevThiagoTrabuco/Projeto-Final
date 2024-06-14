@@ -61,6 +61,7 @@ void comprar(){
 	int inputAux;
 	int repeats=0;
 	int endWhile=0;
+	int answerPointer=0;
 	
 	file=fopen("ListaDeCompras.txt", "w");
 	
@@ -132,7 +133,9 @@ void comprar(){
 				}
 				break;
 			case 2:
-				if(carrinho()!=-1){
+				carrinho(&answerPointer);
+				
+				if(answerPointer!=0){
 					endWhile=1;
 				}
 		}	
