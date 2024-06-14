@@ -5,3 +5,10 @@ Quantidade:
 4#
 Preço: 
 60.00#
+
+Produto: 
+JORGE#
+Quantidade: 
+2#
+Preço: 
+31.50#

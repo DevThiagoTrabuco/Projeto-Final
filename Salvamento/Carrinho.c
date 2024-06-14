@@ -12,7 +12,7 @@ int carrinho(){
 	
 		FILE * file=fopen("ListaDeCompras.txt", "r");
 		if(file==NULL)
-			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");	
+			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio de compras.");	
 			
 		printf("\nCarrinho\n")		;
 		
@@ -49,8 +49,8 @@ int carrinho(){
 			}
 		}	
 		fclose(file);
-		float totalPrice=0.0;
-		float unityPrice=0.0;
+		float totalPrice;
+		float unityPrice;
 		int choice;
 		int choiceAux;
 		int aux=productQuantityAux;
@@ -58,15 +58,18 @@ int carrinho(){
 		
 		while(1){
 			system("cls");
+			totalPrice=0;
+			
 			for(int i=0; i<aux;i++){
 				if( productQuantityString[i]==0){
 					continue;
 				}
 				printf("\n%d Produto: %s\n", i+1, productString[i]);
 				printf("Quantidade: %s\n", productQuantityString[i]);
-				printf("Preço total: %s\n", productPriceString[i]);
+				printf("Preço total: R$%s\n", productPriceString[i]);
+				totalPrice=totalPrice+atof(productPriceString[i]);
 			}
-			printf("\nDigite uma opcao\n1-Finalizar Compra.\n2-Editar Pedido.\n3-Voltar as Compras.\n");
+			printf("\nValor total das compras: R$%.2f\n\nDigite uma opcao\n1-Finalizar Compra.\n2-Editar Pedido.\n3-Voltar as Compras.\n", totalPrice);
 			scanf("%d", &choice);
 			switch(choice){
 				case 1:
@@ -85,10 +88,10 @@ int carrinho(){
 						printf("Quantidade: %s\n", productQuantityString[i]);
 						printf("Preço total: %s\n", productPriceString[i]);
 					}
-					printf("\nO que deseja fazer?\n1-Retirar unidades\n2-Retirar todos os produtos do carrinho.\n");
+					printf("\nO que deseja fazer?\n1-Adicionar unidades ao carrinho\n2-Retirar unidades do carrinho.\n");
 					scanf("%d", &choice);
 					switch(choice){
-						case 1:
+						case 2:
 							printf("\nDe qual produto deseja retirar?\n");
 							scanf("%d", &choice);
 							if(choice>aux){
@@ -100,9 +103,18 @@ int carrinho(){
 							fflush(stdin);
 							printf("\nProduto: %s selecionado.\nQuantas unidades deseja retirar? ", productString[choiceAux-1]);
 							scanf("%d", &choice);
+							
+							unityPrice=atof(productPriceString[choiceAux-1])/atoi(productQuantityString[choiceAux-1]);
 							choice=atoi(productQuantityString[choiceAux-1])-choice;
 							sprintf(unityAux,"%d", choice);
 							strcpy(productQuantityString[choiceAux-1], unityAux);
+
+							sprintf(unityAux,"%.2f", unityPrice);
+							strcpy(productPriceString[choiceAux-1], unityAux);
+							
+							if(atoi(productQuantityString[choiceAux-1])==0){
+								strcpy(productPriceString[choiceAux-1],"0.00");
+							}
 							fflush(stdin);
 					}
 			}
