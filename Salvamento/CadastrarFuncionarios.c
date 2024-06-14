@@ -30,57 +30,58 @@ void cadastrarFuncionarios(){
 				system("cls");
 			}
 			
-			int codigos=0, funcionarios=2, codigoAux=0, funcionarioAux=0;
-			char funcionario[30][50], codigo[30][50];
-			int coluna = 0, canCopy=0;
+			int codes=0, employees=2, codAux=0, employeeAux=0;
+			char employee[30][50], code[30][50];
+			int column = 0, canCopy=0;
 			
 			while(!feof(file)){
-				if(fgets(txt[coluna],500,file)){
+				if(fgets(txt[column],500,file)){
 				int linha=0;
 					do{
-						if(txt[coluna][linha]=='#'){
-							txt[coluna][linha]='\0';
+						if(txt[column][linha]=='#'){
+							txt[column][linha]='\0';
 							break;
 						}
 						linha++;
-					}while(txt[coluna][linha]!='\n');
+					}while(txt[column][linha]!='\n');
 
-					if(codigos || funcionarios){
-						codigos++;
-						funcionarios++;
+					if(codes || employees){
+						codes++;
+						employees++;
 					}
-					if(codigos%5==0){
-						strcpy(codigo[codigoAux], txt[coluna]);
-						codigoAux++;
+					if(codes%5==0){
+						strcpy(code[codAux], txt[column]);
+						codAux++;
 					}
-					if(funcionarios%5==0){
-						strcpy(funcionario[funcionarioAux], txt[coluna]);
-						funcionarioAux++;	
+					if(employees%5==0){
+						strcpy(employee[employeeAux], txt[column]);
+						employeeAux++;	
 					}
-					coluna++;
+					column++;
 				}
 			}
-			int aux=coluna;
-			int doisFatoresNome=0;
-			int doisFatoresCodigo=0;
+			int aux=column;
+			int twoFactorName=0;
+			int twoFactorCode=0;
 	    	
 			while(canCopy==0){
 				canCopy=1;
 				
 				fflush(stdin);
-				if(doisFatoresNome==0){
+				if(twoFactorName==0){
 					printf("Digite o nome do Funcionario a ser cadastrado: ");
 					gets(funcionariosStruct[0].employeeName);
 					strupr(funcionariosStruct[0].employeeName);
 				}
-				if(doisFatoresCodigo==0){
+				if(twoFactorCode==0){
 					printf("Digite o codigo do funcionario a ser cadastrado: ");
 					scanf("%d", &funcionariosStruct[0].code);
+					flush();
 					sprintf(textCode,"%d",funcionariosStruct[0].code);
 				}
 				
-				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(funcionario[coluna],funcionariosStruct[0].employeeName)==0 && doisFatoresNome==0){
+				for(column=0;column<aux;column++){
+					if(strcmp(employee[column],funcionariosStruct[0].employeeName)==0 && twoFactorName==0){
 						printf("\nNome de funcionario já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
@@ -88,19 +89,19 @@ void cadastrarFuncionarios(){
 						break;
 					}
 					else{
-						doisFatoresNome=1;
+						twoFactorName=1;
 					}
 				}
-				for(coluna=0;coluna<aux;coluna++){
-					if(strcmp(codigo[coluna],textCode)==0 || strcmp(codigo[coluna],codeAux)==0 && doisFatoresCodigo==0){
-						printf("Codigo de funcionario já cadastrado.\n\n");
+				for(column=0;column<aux;column++){
+					if(strcmp(code[column],textCode)==0 || strcmp(code[column],codeAux)==0 && twoFactorCode==0){
+						printf("Codigo de employee já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
 						system("cls");
 						break;
 					}
 					else{
-						doisFatoresCodigo=1;
+						twoFactorCode=1;
 					}
 				}	
 			}
@@ -114,6 +115,6 @@ void cadastrarFuncionarios(){
 			scanf("%d", &choice);
 			system("cls");
 	    }
-	    printf("Obrigado por usar a plataforma de cadastro de funcionarios:)\n\n");
+	    printf("Obrigado por usar a plataforma de cadastro de Funcionarios:)\n\n");
 	    system("pause");
 }
