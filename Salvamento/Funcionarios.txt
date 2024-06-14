@@ -1,20 +1,20 @@
 
-Funcionario:
-JORGE#
-Codigo:
-15#
-
 Funcionario: 
-JILSON#
+JOYCE#
 Codigo: 
-18#
+1#
 
 Funcionario: 
 JORGER#
 Codigo: 
-22#
+2#
 
 Funcionario: 
-JOYRCE#
+JORGE#
 Codigo: 
-52#
+3#
+
+Funcionario: 
+JILSON#
+Codigo: 
+4#

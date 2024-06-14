@@ -12,14 +12,14 @@
 typedef struct{
 	int code;
 	char employeeName[MAX_CHAR];
-}Funcionarios;
+}Employees;
 
 void cadastrarFuncionarios(){
 	setlocale(LC_ALL,"");
 	int choice=0, i=0;
 	char txt[30][30], textCode[50], codeAux[20];
 	
-	Funcionarios funcionariosStruct[1];
+	Employees employeesStruct[1];
 		while(choice!=2){
 			
 	    	FILE * file = fopen("Funcionarios.txt", "a+");
@@ -70,18 +70,18 @@ void cadastrarFuncionarios(){
 				fflush(stdin);
 				if(twoFactorName==0){
 					printf("Digite o nome do Funcionario a ser cadastrado: ");
-					gets(funcionariosStruct[0].employeeName);
-					strupr(funcionariosStruct[0].employeeName);
+					gets(employeesStruct[0].employeeName);
+					strupr(employeesStruct[0].employeeName);
 				}
 				if(twoFactorCode==0){
 					printf("Digite o codigo do funcionario a ser cadastrado: ");
-					scanf("%d", &funcionariosStruct[0].code);
+					scanf("%d", &employeesStruct[0].code);
 					flush();
-					sprintf(textCode,"%d",funcionariosStruct[0].code);
+					sprintf(textCode,"%d",employeesStruct[0].code);
 				}
 				
 				for(column=0;column<aux;column++){
-					if(strcmp(employee[column],funcionariosStruct[0].employeeName)==0 && twoFactorName==0){
+					if(strcmp(employee[column],employeesStruct[0].employeeName)==0 && twoFactorName==0){
 						printf("\nNome de funcionario já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
@@ -94,7 +94,7 @@ void cadastrarFuncionarios(){
 				}
 				for(column=0;column<aux;column++){
 					if(strcmp(code[column],textCode)==0 || strcmp(code[column],codeAux)==0 && twoFactorCode==0){
-						printf("Codigo de employee já cadastrado.\n\n");
+						printf("Codigo de funcionario já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
 						system("cls");
@@ -106,11 +106,11 @@ void cadastrarFuncionarios(){
 				}	
 			}
 			strcpy(codeAux, textCode);
-			fprintf(file,"\nFuncionario: \n%s#\n", funcionariosStruct[0].employeeName);
-			fprintf(file, "Codigo: \n%d#\n", funcionariosStruct[0].code);
+			fprintf(file,"\nFuncionario: \n%s#\n", employeesStruct[0].employeeName);
+			fprintf(file, "Codigo: \n%d#\n", employeesStruct[0].code);
 			flush();
 			fclose(file);
-			printf("\nFuncionario: %s\nCodigo: %d\n", funcionariosStruct[0].employeeName, funcionariosStruct[0].code);
+			printf("\nFuncionario: %s\nCodigo: %d\n", employeesStruct[0].employeeName, employeesStruct[0].code);
 			printf("\nDeseja cadastrar mais algum funcionario?\n[1]Sim\n[2]Nao\n");
 			scanf("%d", &choice);
 			system("cls");
