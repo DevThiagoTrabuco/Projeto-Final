@@ -15,7 +15,7 @@ void menu(){
 				printf("\n\n[1] - Login (Não logado) \n[2] - Cadastro\n[3] - Ir as compras\n[4] - Área restrita\n[5] - Fechar aplicação");
 			}
 			else{
-				printf("\n\n[1] - Login (Logado) \n[2] - Cadastro\n[3] - Ir as compras\n[4] - Área restrita\n[5] - Fechar aplicação");
+				printf("\n\n[1] - Deslogar (Logado) \n[2] - Cadastro\n[3] - Ir as compras\n[4] - Área restrita\n[5] - Fechar aplicação");
 			}
 			printf("\n\nPor favor, escolha uma opção: ");
 			scanf("%c", &op);
@@ -23,7 +23,31 @@ void menu(){
 			
 			switch(op){
 				case '1':
-					logged = loginClient();
+					if(logged==0){
+						logged = loginClient();
+					}
+					else if(logged==1){
+						printf("\nDeseja deslogar?\nSim\nNão\n");
+						scanf("%c", &op2);
+						fflush(stdin);
+						switch(op2){
+							case 'S':
+								printf("\nDeslogando...\n");
+								Sleep(2000);
+								op2=0;
+								logged=0;
+							break;
+							case 's':
+								printf("\nDeslogando...\n");
+								Sleep(2000);
+								op2=0;
+								logged=0;
+							break;
+							
+							default:
+								break;
+						}
+					}
 					break;
 				case '2':
 					if(logged == 0){
@@ -45,7 +69,14 @@ void menu(){
 					}
 					break;
 				case '4':
-					areaRestrita();
+					if(logged==0)
+						areaRestrita();
+					else{
+						printf("\nCliente detectado, por favor va para outra area.\n");
+						system("cls");
+						Sleep(2000);
+					}
+						
 					break;
 				case '5':
 					exit = getOut(0);
