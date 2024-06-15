@@ -92,26 +92,22 @@ int loginFuncionario(int choice){
 					printf("Digite seu nome: ");
 					gets(inputName);
 					fflush(stdin);
+					printf("Agora digite o codigo: ");
+					gets(inputCode);
 					strupr(inputName);
 					for(column=0;column<aux;column++){
-						if(strcmp(employee[column],inputName)==0){
-							aux=column;
-							break;
+						if(strcmp(employee[column],inputName)==0 && strcmp(code[column], inputCode)==0){
+							return 1;
+							
 						}
+						else{
+							printf("\nNome ou codigo incorretos digite novamente.\n");
+							system("pause");
+							break;
+						}	
+						system("cls");
 					}
 				}
-				
-				fflush(stdin);
-				printf("Agora digite o codigo: ");
-				gets(inputCode);	
-				if(strcmp(code[aux],inputCode)==0){
-					return 1;
-				}
-				else{
-					printf("\nNome ou codigo incorretos digite novamente.\n");
-					system("pause");
-				}	
-				system("cls");
 			}
 		fclose(file);
 	}

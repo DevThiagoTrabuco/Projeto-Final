@@ -54,7 +54,7 @@ int editarFuncionario(){
 	char replaceName[50];
 	
 		system("cls");
-		printf("\n\nO que deseja editar?\n1-Nome do funcionario.\n2-Codigo do funcionario.\n3-Excluir funcionario.\n");
+		printf("\n\nO que deseja editar?\n1-Nome do funcionario.\n2-Excluir funcionario.\n3-Voltar ao menu\n");
 		scanf("%d", &input);
 		fflush(stdin);
 		switch(input){
@@ -75,77 +75,57 @@ int editarFuncionario(){
 				
 				int twoFactorName=0;
 				
-				while(canCopy==0){
-					if(twoFactorName==0){
-						printf("\nDigite o nome para mudar.\n");
-						gets(replaceName);
-						strupr(replaceName);
+				while(canCopy==0){						
+					printf("\nNome alterado com sucesso.\n");
+					strcpy(employee[inputAux-1], replaceName);
+					Sleep(1000);
+					
+					file = fopen("Funcionarios.txt", "w");
+					for(int i=0;i<aux;i++){
+						fprintf(file,"\nFuncionario: \n%s#\n", employee[i]);
+						fprintf(file, "Codigo: \n%s#\n", code[i]);
 					}
-					for(int i=0;i<=aux;i++){
-						if(strcmp(replaceName, employee[i])==0 && twoFactorName==0){
-							printf("\nNome invalido, escolha outro.\n");
-							system("pause");
-							break;
-						}
-						else{
-							twoFactorName=1;
-							printf("\nNome alterado com sucesso.\n");
-							strcpy(employee[inputAux-1], replaceName);
-							system("pause");
-							
-							file = fopen("Funcionarios.txt", "w");
-							for(int i=0;i<aux;i++){
-								fprintf(file,"\nFuncionario: \n%s#\n", employee[i]);
-								fprintf(file, "Codigo: \n%s#\n", code[i]);
-							}
-							fclose(file);
-							
-							canCopy=1;
-							break;
-						}
+					fclose(file);
+					
+					canCopy=1;
+					break;
 					}
-				}
+				
 				break;
+			
 			case 2:
 				system("cls");
-				printf("\nEdição de codigo\n\nDe qual funcionario deseja editar o codigo?");
+				printf("\nRemoção de funcionario.\n\nLista de funcionarios:");
 				for(int i=0;i<aux;i++){
 					printf("\n\n%d- Funcionario: %s", i+1,employee[i]);
 					printf("\nCodigo: %s", code[i]);
 				}
-				printf("\n\n");
+				printf("\n\nQual funcionario deseja remover?\n");
 				scanf("%d", &input);
-				fflush(stdin);
-				inputAux=input;
-				printf("\nO funcionario %s é o selecionado. Para qual codigo desejar mudar?\n", employee[inputAux-1]);
-				strcpy(code[inputAux-1], "");
-				scanf("%d", &replaceCode);
-				sprintf(replaceCodeAux, "%d", replaceCode);
-				fflush(stdin);
-				while(canCopy==0){
-					for(int i=0;i<aux;i++){
-						if(strcmp(replaceCodeAux, code[i])==0){
-							printf("\nCodigo invalido, escolha outro.\n");
-							scanf("%d", &replaceCode);
-							sprintf(replaceCodeAux, "%d", replaceCode);
-							fflush(stdin);
-						}
-						/*else
-							printf("\nCodigo alterado com sucesso.\n");
-							strcpy(code[inputAux-1], replaceCodeAux);
-							system("pause");
-							
-							file = fopen("Funcionarios.txt", "w");
-							for(int i=0;i<aux;i++){
-								fprintf(file,"\nFuncionario: \n%s#\n", employee[i]);
-								fprintf(file, "Codigo: \n%s#\n", code[i]);
-							}
-							fclose(file);
-			
-							canCopy=1;
-							break;*/
-					}
+				
+				if(input>aux){
+					printf("\nOpção invalida.\n");
+					break;
 				}
+				
+				fflush(stdin);
+				file = fopen("Funcionarios.txt", "w");
+				strcpy(employee[input-1], "");
+				strcpy(code[input-1], "");
+				for(int i=0;i<aux;i++){
+					if(i==input-1){
+						continue;
+					}
+					fprintf(file,"\nFuncionario: \n%s#\n", employee[i]);
+					fprintf(file, "Codigo: \n%s#\n", code[i]);
+					
+				}
+				fclose(file);
+				break;
+			case 3:
+				system("cls");
+				printf("Voltando ao menu\n");
+				Sleep(1000);
 				break;
 		}
 	}

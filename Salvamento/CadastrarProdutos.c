@@ -13,14 +13,14 @@ typedef struct{
 	int code, stock;
 	float price;
 	char productName[MAX_CHAR];
-}Produtos;
+}Products;
 
 void cadastrarProdutos(){
 	setlocale(LC_ALL,"");
 	int choice=0, i=0;
 	char txt[30][30], textCode[50], codeAux[20];
 	
-	Produtos produtosStruct[1];
+	Products productsStruct[1];
 		while(choice!=2){
 			
 	    	FILE * file = fopen("Produtos.txt", "a+");
@@ -81,18 +81,18 @@ void cadastrarProdutos(){
 				
 				if(doisFatoresNome==0){
 					printf("Digite o nome do produto a ser cadastrado: ");
-					gets(produtosStruct[0].productName);
-					strupr(produtosStruct[0].productName);	
+					gets(productsStruct[0].productName);
+					strupr(productsStruct[0].productName);	
 					fflush(stdin);
 				}
 				if(doisFatoresCodigo==0){
 					printf("Digite o codigo do produto a ser cadastrado: ");
-					scanf("%d", &produtosStruct[0].code);
-					sprintf(textCode,"%d",produtosStruct[0].code);
+					scanf("%d", &productsStruct[0].code);
+					sprintf(textCode,"%d",productsStruct[0].code);
 				}
 
 				for(column=0;column<aux;column++){					
-					if(strcmp(product[column],produtosStruct[0].productName)==0 && doisFatoresNome==0){
+					if(strcmp(product[column],productsStruct[0].productName)==0 && doisFatoresNome==0){
 						printf("\nNome de produto já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
@@ -118,19 +118,19 @@ void cadastrarProdutos(){
 				}	
 			}
 			printf("\nDigite o preco do produto: ");
-			scanf("%f", &produtosStruct[0].price);
+			scanf("%f", &productsStruct[0].price);
 			printf("\nDigite quantos produtos tem no estoque: ");
-			scanf("%d", &produtosStruct[0].stock);
+			scanf("%d", &productsStruct[0].stock);
 			
 			strcpy(codeAux,textCode);
-			fprintf(file,"\nProduto: \n%s#\n", produtosStruct[0].productName);
-			fprintf(file, "Preco: \n%.2f#\n", produtosStruct[0].price);
-			fprintf(file, "Codigo: \n%d#\n", produtosStruct[0].code);
-			fprintf(file, "Estoque: \n%d#\n", produtosStruct[0].stock);
-			flush();
+			fprintf(file,"\nProduto: \n%s#\n", productsStruct[0].productName);
+			fprintf(file, "Preco: \n%.2f#\n", productsStruct[0].price);
+			fprintf(file, "Codigo: \n%d#\n", productsStruct[0].code);
+			fprintf(file, "Estoque: \n%d#\n", productsStruct[0].stock);
+			
 			fclose(file);
 			
-			printf("\nProduto: %s\nCodigo: %d\nPreco: %.2f\n", produtosStruct[0].productName, produtosStruct[0].code, produtosStruct[0].price);
+			printf("\nProduto: %s\nCodigo: %d\nPreco: %.2f\n", productsStruct[0].productName, productsStruct[0].code, productsStruct[0].price);
 			printf("\nDeseja cadastrar mais algum produto?\n[1]Sim\n[2]Nao\n");
 			scanf("%d", &choice);
 			system("cls");

@@ -72,6 +72,7 @@ void cadastrarFuncionarios(){
 					printf("Digite o nome do Funcionario a ser cadastrado: ");
 					gets(employeesStruct[0].employeeName);
 					strupr(employeesStruct[0].employeeName);
+					twoFactorName=1;
 				}
 				if(twoFactorCode==0){
 					printf("Digite o codigo do funcionario a ser cadastrado: ");
@@ -80,18 +81,6 @@ void cadastrarFuncionarios(){
 					sprintf(textCode,"%d",employeesStruct[0].code);
 				}
 				
-				for(column=0;column<aux;column++){
-					if(strcmp(employee[column],employeesStruct[0].employeeName)==0 && twoFactorName==0){
-						printf("\nNome de funcionario já cadastrado.\n\n");
-						canCopy=0;
-						Sleep(2000);
-						system("cls");
-						break;
-					}
-					else{
-						twoFactorName=1;
-					}
-				}
 				for(column=0;column<aux;column++){
 					if(strcmp(code[column],textCode)==0 || strcmp(code[column],codeAux)==0 && twoFactorCode==0){
 						printf("Codigo de funcionario já cadastrado.\n\n");
@@ -117,4 +106,7 @@ void cadastrarFuncionarios(){
 	    }
 	    printf("Obrigado por usar a plataforma de cadastro de Funcionarios:)\n\n");
 	    system("pause");
+}
+int main(){
+	cadastrarFuncionarios();
 }

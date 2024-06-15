@@ -1,15 +1,5 @@
 
 Funcionario: 
-JOYCE#
-Codigo: 
-1#
-
-Funcionario: 
-JORGER#
-Codigo: 
-2#
-
-Funcionario: 
 JORGE#
 Codigo: 
 3#
@@ -17,4 +7,4 @@ Codigo:
 Funcionario: 
 JILSON#
 Codigo: 
-4#
+5#
