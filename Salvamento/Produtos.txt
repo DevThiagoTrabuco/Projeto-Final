@@ -11,8 +11,8 @@ Estoque:
 Produto: 
 ARROZ#
 Preco: 
-7,00#
+7.00#
 Codigo: 
 2#
 Estoque: 
-49#
+54#

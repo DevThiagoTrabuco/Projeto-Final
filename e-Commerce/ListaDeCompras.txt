@@ -1,7 +1,7 @@
 
 Produto: 
-JORGE#
+ARROZ#
 Quantidade: 
 5#
 Preço: 
-25,00#
+35,00#
