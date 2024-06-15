@@ -1,4 +1,10 @@
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+#include<locale.h>
+#include<ctype.h>
+#include<windows.h>
 
 int comprar(){
 	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
@@ -57,7 +63,7 @@ int comprar(){
 	int repeats=0;
 	int endWhile=0;
 	int answerPointer=0;
-	float totalPrice=0;
+	float totalPrice;
 	
 	file=fopen("ListaDeCompras.txt", "w");
 	
@@ -79,8 +85,7 @@ int comprar(){
 				}
 				printf("\nQual produto deseja adicionar no carrinho?\n");
 				scanf("%d", &input);
-				
-				
+
 				inputAux=input-1;
 				if(input<0){
 					printf("\nOpcao invalida.\n");

@@ -1,3 +1,10 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+#include<locale.h>
+#include<ctype.h>
+#include<windows.h>
 
 void menu(){
 	char op, op2;
@@ -20,14 +27,15 @@ void menu(){
 					cadastrarClientes();
 					break;
 				case '3':
-					if(logged==1){
-						if(totalPrice=comprar()!=0){
-							payment(totalPrice);
-						}
+					if(logged==1){						
+						totalPrice=comprar();							
+						payment(totalPrice);
+						
 					}
 					else{
 						printf("\nLogue-se primeiro\n");
-						sleep(200);
+						Sleep(2000);
+						system("cls");
 					}
 					
 					break;

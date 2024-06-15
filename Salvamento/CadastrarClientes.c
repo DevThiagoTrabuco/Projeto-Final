@@ -121,8 +121,8 @@ int cadastrarClientes(){
 			
 			fclose(file);
 			
-			printf("\nDeseja voltando ao menu\n");
-			sleep(200);
+			printf("\nVoltando ao menu\n");
+			Sleep(200);
 			system("cls");
 			return 1;
 	    }

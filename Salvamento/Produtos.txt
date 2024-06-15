@@ -6,7 +6,7 @@ Preco:
 Codigo: 
 1#
 Estoque: 
-15#
+65#
 
 Produto: 
 AROOZ#
@@ -15,4 +15,4 @@ Preco:
 Codigo: 
 2#
 Estoque: 
-0#
+54#
