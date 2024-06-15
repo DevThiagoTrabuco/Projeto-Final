@@ -5,8 +5,7 @@
 #include<windows.h>
 #include<locale.h>
 
-#include "flush.c"
-int editarFuncionario(){
+int editarProduto(){
 	
 	while(1){
 	FILE * file = fopen("Produtos.txt", "r");
@@ -220,7 +219,4 @@ int editarFuncionario(){
 				break;
 		}
 	}
-}
-int main(){
-	editarFuncionario();
 }

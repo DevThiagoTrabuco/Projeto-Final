@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "flush.c"
 
-int loginFuncionario(){
+
+int loginFuncionarios(){
 	
 	FILE * file = fopen("Funcionarios.txt", "r");
 	if(file==NULL)

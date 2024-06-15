@@ -1,4 +1,3 @@
-#define MAX_CHAR 50
 
 typedef struct{
 	char street[MAX_CHAR];
@@ -6,9 +5,9 @@ typedef struct{
 	char city[MAX_CHAR];
 	char uf[2];
 	int houseNmbr;
-} Adress;
+} Adresses;
 
-Adress shipment;
+Adresses shipment;
 
 void adress(){
 	system("cls");

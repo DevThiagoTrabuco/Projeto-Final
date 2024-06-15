@@ -1,21 +1,9 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<math.h>
-#include<locale.h>
-#include<ctype.h>
-
-#include"dadosDoCartao.c"
-#include"parcelas.c"
-#include"resumo.c"
-#include"qrCode.c"
-#include"endereço.c"
-#include"cpf.c"
 
 int payment(){
 	setlocale(LC_ALL, "");
 	int op, choice;
-	
+	float price;
+	char name[40];
 		printf("Escolha o método de pagamento:\n[1] - Cartão de débito\n[2] - Cartão de crédito\n[3] - PIX\n");
 		scanf("%d", &op);
 		fflush(stdin);
@@ -39,8 +27,4 @@ int payment(){
 				pix();	
 				break;
 		}
-}
-
-int main(){
-	payment();
 }

@@ -3,7 +3,6 @@
 #include <string.h>
 #include <windows.h>
 
-#include "flush.c"
 
 int loginFuncionario(){
 

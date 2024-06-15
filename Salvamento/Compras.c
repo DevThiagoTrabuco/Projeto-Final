@@ -3,8 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "flush.c"
-#include "Carrinho.c"
 void comprar(){
 	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
 	char txt[200], productString[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
@@ -73,7 +71,7 @@ void comprar(){
 		
 		printf("\nO que deseja fazer?\n1-Lista de compras\n2-Carrinho\n");
 		scanf("%d", &input);
-		flush();
+
 		switch(input){
 			case 1:
 				for(int i=0;i<number;i++){
@@ -83,7 +81,7 @@ void comprar(){
 				}
 				printf("\nQual produto deseja adicionar no carrinho?\n");
 				scanf("%d", &input);
-				flush();
+				
 				
 				inputAux=input-1;
 				if(input<0){
@@ -97,7 +95,7 @@ void comprar(){
 				}
 				if(input>number){
 					printf("Produto nao existe");
-					flush();
+					
 					system("pause");
 					system("cls");
 					continue;
@@ -152,8 +150,4 @@ void comprar(){
 		aux++;
 	}
 	fclose(file2);
-}
-int main(){
-	int option=2;
-	comprar();
 }

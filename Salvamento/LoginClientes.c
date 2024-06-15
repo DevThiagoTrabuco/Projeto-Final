@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "CadastrarClientes.c"
 
 int loginClient(){	
 	char txt[30][30], textCode[50], codeAux[20];
 	
-    	FILE * file = fopen("Clientes.txt", "a+");
+    	FILE * file = fopen("Clientes.txt", "r");
     	if(file==NULL){
 			printf("Erro ao abrir o arquivo\nCriando um arquivo novo :)");
 			FILE * file = fopen("Clientes.txt", "w");
@@ -59,46 +58,32 @@ int loginClient(){
 		char emailInput[50];
 		char passwordInput[50];
 		char choice;
+		int returns=1;
 		
-		while(1){
-			if(canCopyEmail==0){
-				system("cls");
-				printf("\nDigite seu email: ");
-				gets(emailInput);
-				fflush(stdin);
-				strupr(emailInput);
-				for(column=0;column<aux;column++){
-					if(strcmp(email[column],emailInput)==0){
-						aux=column;
-						canCopyPassword=1;
-						canCopyEmail=1;
-						break;
-					}
-				}
-				if(canCopyEmail==0){
-						printf("\nEmail nao encontrado no banco de dados, deseja prosseguir para o cadastro?\nSim.\nNao.\n");
-						scanf("%c", &choice);
-						fflush(stdin);
-						if(choice=='S' || choice=='s'){
-							printf("redirecionando para a pagina de cadastro");
-							system("cls");
-							
-						}
-				}
-			}
-			if(canCopyPassword==1){
-				printf("\nUsuario: %s\nAgora digite a senha: ", emailInput);
-				gets(passwordInput);	
-				if(strcmp(password[aux],passwordInput)==0){
-					return 1;
+		while(aux!=-2){
+			
+			printf("Digite Email: ");
+			gets(emailInput);
+			fflush(stdin);
+			printf("Agora digite a senha: ");
+			gets(passwordInput);
+			strupr(emailInput);
+			for(column=0;column<aux;column++){
+				if(strcmp(email[column],emailInput)==0 && strcmp(password[column], passwordInput)==0){
+					return returns;
 				}
 				else{
-					printf("\nSenha incorreta digite novamente.\n");
-					system("pause");
+					printf("\nNome ou codigo incorretos.\nDeseja ir ao cadastro?\nSim\nNao\n");
+					scanf("%c", &choice);
+					if(choice=='s' || choice=='S'){
+						cadastrarClientes();
+					}
+					else
+						break;
 				}	
 				system("cls");
 			}
+			
 		}
-		fclose(file);
+	fclose(file);
 }
-

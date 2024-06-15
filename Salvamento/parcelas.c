@@ -1,4 +1,4 @@
-int installments(float price){
+int installmentss(float price){
 	int choice;
 	
 		system("cls");

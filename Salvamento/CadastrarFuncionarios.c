@@ -5,21 +5,20 @@
 #include<windows.h>
 #include<locale.h>
 
-#include "flush.c"
 
 #define MAX_CHAR 80
 
 typedef struct{
 	int code;
 	char employeeName[MAX_CHAR];
-}Employees;
+}Employeess;
 
 void cadastrarFuncionarios(){
 	setlocale(LC_ALL,"");
 	int choice=0, i=0;
 	char txt[30][30], textCode[50], codeAux[20];
 	
-	Employees employeesStruct[1];
+	Employeess employeesStruct[1];
 		while(choice!=2){
 			int number=0;
 			

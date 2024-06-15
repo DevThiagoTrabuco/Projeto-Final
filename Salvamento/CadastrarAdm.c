@@ -5,10 +5,6 @@
 #include<windows.h>
 #include<locale.h>
 
-#include "flush.c"
-
-#define MAX_CHAR 80
-
 typedef struct{
 	int code;
 	char admName[MAX_CHAR];
@@ -81,6 +77,4 @@ void cadastrarAdms(){
 	    printf("Obrigado por usar a plataforma de cadastro de Administradores:)\n\n");
 	    system("pause");
 }
-int main(){
-	cadastrarAdms();
-}
+

@@ -5,7 +5,6 @@
 #include<windows.h>
 #include<locale.h>
 
-#include "flush.c"
 int editarFuncionario(){
 	
 	while(1){
@@ -133,7 +132,4 @@ int editarFuncionario(){
 		}
 	}
 	
-}
-int main(){
-	editarFuncionario();
 }

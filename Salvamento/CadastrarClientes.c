@@ -5,7 +5,6 @@
 #include<windows.h>
 #include<locale.h>
 
-
 #define MAX_CHAR 80
 
 typedef struct{
