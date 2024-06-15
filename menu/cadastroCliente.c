@@ -12,13 +12,13 @@ int clientList(){
 	int i = 0;
 	
 	system("cls");
-	printf("VocÃª jÃ¡ possui cadastro?(S/N): ");
+	printf("Você já possui cadastro?(S/N): ");
 	scanf("%c", &op);
 	fflush(stdin);
 	strupr(op);
 	
 	switch(op[0]){
-		case 'S': //login (checa o documento retorna se hÃ¡ email cadastrado ou senha correta)			
+		case 'S': //login (checa o documento retorna se há email cadastrado ou senha correta)			
 			printf("\nDigite o seu email:\n");
 			gets(client[i].email);
 			printf("Digite a sua senha:\n");
@@ -34,17 +34,19 @@ int clientList(){
 			printf("Senha:\n");
 			gets(client[i].password);
 			while(1){
-				if(strlen(client[i].password)<5){
-				printf("\nSenha fraca, digite uma nova senha: ");
-				gets(client[i].password);
-				}
-				else 
-				break;
+					if(strlen(client[i].password)<5){
+					printf("\nSenha fraca, digite uma nova senha: ");
+					gets(client[i].password);
+					}
+					else 
+					break;
 				}
 			fflush(stdin);
 			break;
 		default:
-			break;
+			printf("Opção inválida\n");
+			system("pause");
+			return 0;
 	}
 	system("pause");
 }
