@@ -52,6 +52,7 @@ int loginClient(){
 				column++;
 			}
 		}
+		fclose(file);
 		int aux=clientNameAux;
 		int canCopyEmail=0;
 		int canCopyPassword=0;
@@ -77,12 +78,12 @@ int loginClient(){
 				if(canCopyEmail==0){
 						printf("\nEmail nao encontrado no banco de dados, deseja prosseguir para o cadastro?\nSim.\nNao.\n");
 						scanf("%c", &choice);
+						fflush(stdin);
 						if(choice=='S' || choice=='s'){
 							printf("redirecionando para a pagina de cadastro");
 							system("cls");
-							cadastrarClientes();
+							
 						}
-					fflush(stdin);
 				}
 			}
 			if(canCopyPassword==1){
@@ -100,6 +101,4 @@ int loginClient(){
 		}
 		fclose(file);
 }
-int main(){
-	loginClient();
-}
+

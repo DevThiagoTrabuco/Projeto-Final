@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 
 #include "flush.c"
 
@@ -42,42 +43,33 @@ int loginFuncionario(){
 		}
 	}
 	int aux=admAux;
-	int canCopyName=0;
-	int canCopyCode=0;
+
 	char inputName[50];
 	char inputCode[50];
 	
 	while(1){
-		if(canCopyName==0){
-			printf("Digite seu nome: ");
-			gets(inputName);
-			fflush(stdin);
-			strupr(inputName);
-			for(column=0;column<aux;column++){
-				if(strcmp(adm[column],inputName)==0){
-					aux=column;
-					break;
-				}
-			}
-		}
+		system("cls");
+		printf("Digite seu nome: ");
+		gets(inputName);
 		fflush(stdin);
+
 		printf("Agora digite o codigo: ");
 		gets(inputCode);	
 		strupr(inputCode);
-		if(strcmp(code[aux],inputCode)==0){
-			return 1;
+		fflush(stdin);
+		
+		strupr(inputName);
+		for(column=0;column<aux;column++){
+			if(strcmp(adm[column],inputName)==0 && strcmp(code[column], inputCode)==0){
+				return 1;
+			}
+			else{
+				printf("\nNome ou codigo incorretos digite novamente.\n");
+				Sleep(2000);
+				break;
+			}	
 		}
-		else{
-			printf("\nNome ou codigo incorretos digite novamente.\n");
-			system("pause");
-		}	
-		system("cls");
 	}
 	fclose(file);
 
-}
-
-int main(){
-	int choice=2;
-	loginFuncionario();
 }

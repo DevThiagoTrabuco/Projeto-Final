@@ -1,0 +1,14 @@
+
+Produto: 
+JORGE#
+Quantidade: 
+5#
+Preço: 
+27.50#
+
+Produto: 
+JORGE#
+Quantidade: 
+5#
+Preço: 
+27.50#

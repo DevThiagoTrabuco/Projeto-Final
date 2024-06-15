@@ -5,6 +5,7 @@
 #include<windows.h>
 #include<locale.h>
 
+#include "LeituraClientes.c"
 
 #define MAX_CHAR 80
 
@@ -67,7 +68,7 @@ void cadastrarClientes(){
 			int doisFatoresSobreNome=0;
 			int doisFatoresSenha=0;
 	    	int doisFatoresEmail=0;
-	    	char choiceEmail='0';
+	    	char choiceEmail;
 	    	
 			while(canCopy==0){
 				canCopy=1;
@@ -100,17 +101,17 @@ void cadastrarClientes(){
 				}
 				for(coluna=0;coluna<aux;coluna++){
 					if(strcmp(email[coluna], client[0].email)==0){
-						printf("\nEmail de cliente já cadastrado.\n\n");
+						printf("\nEmail de cliente jÃ¡ cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
-						printf("\nDeseja ir para o menu?\nSim\nNão\n");
+						printf("\nDeseja ir para a pagina de login?\nSim\nNÃ£o\n");
 						scanf("%c", &choiceEmail);
 						fflush(stdin);
 						
 						if(choiceEmail=='S'|| choiceEmail=='s'){
 							printf("\nRedirecionando a pagina de login\n");
 							Sleep(2000);
-							
+							loginClient();
 						}
 						else {
 							system("cls");

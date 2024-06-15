@@ -21,6 +21,7 @@ void cadastrarFuncionarios(){
 	
 	Employees employeesStruct[1];
 		while(choice!=2){
+			int number=0;
 			
 	    	FILE * file = fopen("Funcionarios.txt", "a+");
 	    	if(file==NULL){
@@ -55,49 +56,23 @@ void cadastrarFuncionarios(){
 					}
 					if(employees%5==0){
 						strcpy(employee[employeeAux], txt[column]);
-						employeeAux++;	
+						employeeAux++;
+						number++;
 					}
 					column++;
 				}
 			}
-			int aux=column;
-			int twoFactorName=0;
-			int twoFactorCode=0;
-	    	
-			while(canCopy==0){
-				canCopy=1;
-				
-				fflush(stdin);
-				if(twoFactorName==0){
-					printf("Digite o nome do Funcionario a ser cadastrado: ");
-					gets(employeesStruct[0].employeeName);
-					strupr(employeesStruct[0].employeeName);
-					twoFactorName=1;
-				}
-				if(twoFactorCode==0){
-					printf("Digite o codigo do funcionario a ser cadastrado: ");
-					scanf("%d", &employeesStruct[0].code);
-					flush();
-					sprintf(textCode,"%d",employeesStruct[0].code);
-				}
-				
-				for(column=0;column<aux;column++){
-					if(strcmp(code[column],textCode)==0 || strcmp(code[column],codeAux)==0 && twoFactorCode==0){
-						printf("Codigo de funcionario já cadastrado.\n\n");
-						canCopy=0;
-						Sleep(2000);
-						system("cls");
-						break;
-					}
-					else{
-						twoFactorCode=1;
-					}
-				}	
-			}
-			strcpy(codeAux, textCode);
+			int aux=employeeAux;
+			
+			fflush(stdin);
+			printf("Digite o nome do Funcionario a ser cadastrado: ");
+			gets(employeesStruct[0].employeeName);
+			strupr(employeesStruct[0].employeeName);
+			
+			employeesStruct[0].code=number+1;
+			
 			fprintf(file,"\nFuncionario: \n%s#\n", employeesStruct[0].employeeName);
 			fprintf(file, "Codigo: \n%d#\n", employeesStruct[0].code);
-			flush();
 			fclose(file);
 			printf("\nFuncionario: %s\nCodigo: %d\n", employeesStruct[0].employeeName, employeesStruct[0].code);
 			printf("\nDeseja cadastrar mais algum funcionario?\n[1]Sim\n[2]Nao\n");
@@ -106,7 +81,4 @@ void cadastrarFuncionarios(){
 	    }
 	    printf("Obrigado por usar a plataforma de cadastro de Funcionarios:)\n\n");
 	    system("pause");
-}
-int main(){
-	cadastrarFuncionarios();
 }

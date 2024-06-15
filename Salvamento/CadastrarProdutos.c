@@ -5,7 +5,6 @@
 #include<windows.h>
 #include<locale.h>
 
-#include "flush.c"
 
 #define MAX_CHAR 80
 
@@ -72,57 +71,23 @@ void cadastrarProdutos(){
 					}	
 				}
 			int aux=number;
-			int doisFatoresNome=0;
-			int doisFatoresCodigo=0;
 	    	
-			while(canCopy==0 && canCopy==0){
-				canCopy=1;
-				fflush(stdin);
-				
-				if(doisFatoresNome==0){
-					printf("Digite o nome do produto a ser cadastrado: ");
-					gets(productsStruct[0].productName);
-					strupr(productsStruct[0].productName);	
-					fflush(stdin);
-				}
-				if(doisFatoresCodigo==0){
-					printf("Digite o codigo do produto a ser cadastrado: ");
-					scanf("%d", &productsStruct[0].code);
-					sprintf(textCode,"%d",productsStruct[0].code);
-				}
-
-				for(column=0;column<aux;column++){					
-					if(strcmp(product[column],productsStruct[0].productName)==0 && doisFatoresNome==0){
-						printf("\nNome de produto já cadastrado.\n\n");
-						canCopy=0;
-						Sleep(2000);
-						system("cls");
-						break;
-					}
-					else{
-						doisFatoresCodigo=1;
-					}
-				}
-				for(column=0;column<aux;column++){
-					if(strcmp(productCode[column],textCode)==0 || strcmp(productCode[column], codeAux)==0 && doisFatoresCodigo==0){
-						printf("Codigo de produto já cadastrado.\n\n");
-						canCopy=0;
-						doisFatoresCodigo=0;
-						Sleep(2000);
-						system("cls");
-						break;
-					}
-					else{
-						doisFatoresCodigo=1;
-					}
-				}	
-			}
+			fflush(stdin);
+			printf("Digite o nome do produto a ser cadastrado: ");
+			gets(productsStruct[0].productName);
+			strupr(productsStruct[0].productName);	
+			fflush(stdin);
+			
+			productsStruct[0].code=number+1;
+			
 			printf("\nDigite o preco do produto: ");
 			scanf("%f", &productsStruct[0].price);
+			fflush(stdin);
+			
 			printf("\nDigite quantos produtos tem no estoque: ");
 			scanf("%d", &productsStruct[0].stock);
+			fflush(stdin);
 			
-			strcpy(codeAux,textCode);
 			fprintf(file,"\nProduto: \n%s#\n", productsStruct[0].productName);
 			fprintf(file, "Preco: \n%.2f#\n", productsStruct[0].price);
 			fprintf(file, "Codigo: \n%d#\n", productsStruct[0].code);

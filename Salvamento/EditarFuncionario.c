@@ -67,30 +67,33 @@ int editarFuncionario(){
 				}
 				printf("\n\n");
 				scanf("%d", &input);
+				
+				if(input>aux){
+					printf("\nOpção invalida.\n");
+					Sleep(1000);
+					break;
+				}
+				
 				fflush(stdin);
 				inputAux=input;
 				system("cls");
 				printf("\nO funcionario %s é o selecionado\n", employee[inputAux-1]);
 				strcpy(employee[inputAux-1], "");
 				
-				int twoFactorName=0;
 				
-				while(canCopy==0){						
-					printf("\nNome alterado com sucesso.\n");
-					strcpy(employee[inputAux-1], replaceName);
-					Sleep(1000);
-					
-					file = fopen("Funcionarios.txt", "w");
-					for(int i=0;i<aux;i++){
-						fprintf(file,"\nFuncionario: \n%s#\n", employee[i]);
-						fprintf(file, "Codigo: \n%s#\n", code[i]);
-					}
-					fclose(file);
-					
-					canCopy=1;
-					break;
-					}
+				printf("\nPara qual nome deseja alterar?\n");
+				gets(employee[inputAux-1]);
+				strupr(employee[inputAux-1]);
+				fflush(stdin);
+				printf("\nNome alterado com sucesso.\n");
+				Sleep(1000);
 				
+				file = fopen("Funcionarios.txt", "w");
+				for(int i=0;i<aux;i++){
+					fprintf(file,"\nFuncionario: \n%s#\n", employee[i]);
+					fprintf(file, "Codigo: \n%s#\n", code[i]);
+				}
+				fclose(file);
 				break;
 			
 			case 2:
