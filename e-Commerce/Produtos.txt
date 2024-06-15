@@ -16,3 +16,12 @@ Codigo:
 2#
 Estoque: 
 49#
+
+Produto: 
+FRANGO#
+Preco: 
+10,00#
+Codigo: 
+3#
+Estoque: 
+50#

@@ -46,7 +46,6 @@ void menu(){
 					break;
 				case '4':
 					areaRestrita();
-					getBack();
 					break;
 				case '5':
 					exit = getOut(0);
