@@ -73,8 +73,8 @@ void menu(){
 						areaRestrita();
 					else{
 						printf("\nCliente detectado, por favor va para outra area.\n");
-						system("cls");
 						Sleep(2000);
+						system("cls");
 					}
 						
 					break;
