@@ -24,7 +24,6 @@ int payment(float totalPrice){
 				cpf();
 				adress();
 				pix();
-				op=0;
 				summary(totalPrice, op);
 				break;
 		}

@@ -1,7 +1,0 @@
-
-Produto: 
-AROOZ#
-Quantidade: 
-5#
-Preço: 
-35,00#

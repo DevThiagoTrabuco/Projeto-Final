@@ -2,6 +2,7 @@
 void menu(){
 	char op, op2;
 	int exit;
+	int logged=0;
 	float totalPrice;
 	setlocale(LC_ALL, "");
 		system("cls");
@@ -13,15 +14,20 @@ void menu(){
 			
 			switch(op){
 				case '1':
-					loginClient();
+					logged=loginClient();
 					break;
 				case '2':
 					cadastrarClientes();
 					break;
 				case '3':
-					
-					if(totalPrice=comprar()!=0){
-						payment(totalPrice);
+					if(logged==1){
+						if(totalPrice=comprar()!=0){
+							payment(totalPrice);
+						}
+					}
+					else{
+						printf("\nLogue-se primeiro\n");
+						sleep(200);
 					}
 					
 					break;

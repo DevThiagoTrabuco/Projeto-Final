@@ -1,6 +1,6 @@
 void summary(float price, int op){
 	system("cls");
-	printf("Nome do produto: %s\nValor do produto: R$%.2f\n", price);
+	printf("nValor do produto: R$%.2f\n", price);
 	if(op == 1 || op == 2 || op == 3) 
 		printf("Método de pagamento: %dX de R$%.2f\n\n", op, price / op);
 	else if(op == 4)

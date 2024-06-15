@@ -121,9 +121,10 @@ int cadastrarClientes(){
 			
 			fclose(file);
 			
-			printf("\nDeseja cadastrar mais algum cliente?\n[1]Sim\n[2]Nao\n");
-			scanf("%d", &choice);
+			printf("\nDeseja voltando ao menu\n");
+			sleep(200);
 			system("cls");
+			return 1;
 	    }
 	    printf("Obrigado por usar a plataforma de cadastro de funcionarios:)\n\n");
 	    system("pause");
