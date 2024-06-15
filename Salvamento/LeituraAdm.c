@@ -1,10 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <windows.h>
 
-
-int loginFuncionario(){
+int loginAdm(){
 
 	FILE * file = fopen("ADM.txt", "r");
 	if(file==NULL)
@@ -47,7 +42,6 @@ int loginFuncionario(){
 	char inputCode[50];
 	
 	while(1){
-		system("cls");
 		printf("Digite seu nome: ");
 		gets(inputName);
 		fflush(stdin);
@@ -61,13 +55,13 @@ int loginFuncionario(){
 		for(column=0;column<aux;column++){
 			if(strcmp(adm[column],inputName)==0 && strcmp(code[column], inputCode)==0){
 				return 1;
-			}
-			else{
-				printf("\nNome ou codigo incorretos digite novamente.\n");
-				Sleep(2000);
-				break;
-			}	
+			}			
 		}
+		
+		printf("\nNome ou codigo incorretos digite novamente.\n");
+		Sleep(2000);
+		break;
+				
 	}
 	fclose(file);
 

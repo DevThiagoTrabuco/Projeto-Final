@@ -1,5 +1,4 @@
 void getBack(){
-	//int i = 1;
 	int x;
 	char op[1];
 		

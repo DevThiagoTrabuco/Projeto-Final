@@ -75,6 +75,7 @@ int loginClient(){
 				else{
 					printf("\nNome ou codigo incorretos.\nDeseja ir ao cadastro?\nSim\nNao\n");
 					scanf("%c", &choice);
+					fflush(stdin);
 					if(choice=='s' || choice=='S'){
 						cadastrarClientes();
 					}

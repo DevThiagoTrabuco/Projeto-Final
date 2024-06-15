@@ -4,6 +4,7 @@ int payment(){
 	int op, choice;
 	float price;
 	char name[40];
+	
 		printf("Escolha o método de pagamento:\n[1] - Cartão de débito\n[2] - Cartão de crédito\n[3] - PIX\n");
 		scanf("%d", &op);
 		fflush(stdin);

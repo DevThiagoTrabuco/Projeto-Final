@@ -1,12 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<stdbool.h>
-#include<windows.h>
-#include<locale.h>
-
-
-#define MAX_CHAR 80
 
 typedef struct{
 	int code;

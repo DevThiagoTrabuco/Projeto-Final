@@ -1,11 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<stdbool.h>
-#include<windows.h>
-#include<locale.h>
 
-#define MAX_CHAR 80
 
 typedef struct{
 	char name[20];
@@ -14,7 +7,7 @@ typedef struct{
 	char password[20];
 }Register;
 
-void cadastrarClientes(){
+int cadastrarClientes(){
 	setlocale(LC_ALL,"");
 	int choice=0, i=0;
 	char txt[30][30], textCode[50], codeAux[20];
@@ -107,9 +100,9 @@ void cadastrarClientes(){
 						fflush(stdin);
 						
 						if(choiceEmail=='S'|| choiceEmail=='s'){
-							printf("\nRedirecionando a pagina de login\n");
+							printf("\nRedirecionando o menu\n");
 							Sleep(2000);
-							
+							return -1;
 						}
 						else {
 							system("cls");

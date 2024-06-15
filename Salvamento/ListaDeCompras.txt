@@ -4,11 +4,11 @@ JORGE#
 Quantidade: 
 5#
 Preço: 
-27.50#
+25,00#
 
 Produto: 
 JORGE#
 Quantidade: 
 5#
 Preço: 
-27.50#
+25,00#

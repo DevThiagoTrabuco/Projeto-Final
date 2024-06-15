@@ -3,10 +3,10 @@ void menu(){
 	char op, op2;
 	int exit;
 	setlocale(LC_ALL, "");
-		
+		system("cls");
 		while(exit != 1){
 			printf("\t\t##################\n\t\t#\t\t #\n\t\t#      MENU      #\n\t\t#\t\t #\n\t\t##################\n\nBem vindo(a) à loja [PLACEHOLDER]!!");
-			printf("\n\n[1] - Login \n[2] - Cadastro\n[3] - Visualizar catálogo\n[4] - Área restrita\n[5] - Fechar aplicação\n\nPor favor, escolha uma opção: ");
+			printf("\n\n[1] - Login \n[2] - Cadastro\n[3] - Ir as compras\n[4] - Área restrita\n[5] - Fechar aplicação\n\nPor favor, escolha uma opção: ");
 			scanf("%c", &op);
 			fflush(stdin);
 			
@@ -19,10 +19,10 @@ void menu(){
 					cadastrarClientes();
 					break;
 				case '3'://área restrita
-					getBack();
+					comprar();
 					break;
 				case '4'://sair da aplicação
-					getBack();
+					areaRestrita();
 					break;
 				case '5'://sair da aplicação
 					exit = getOut();

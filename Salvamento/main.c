@@ -15,7 +15,7 @@
 #include "Carrinho.c"
 #include "Compras.c"
 #include "cpf.c"
-//#include "dadosDoCartao.c"
+#include "dadosDoCartao.c"
 #include "EditarFuncionario.c"
 #include "EditarProduto.c"
 #include "endereço.c"
@@ -27,9 +27,13 @@
 #include "menu.c"
 #include "parcelas.c"
 #include "qrCode.c"
-//#include "resumo.c"
+#include "resumo.c"
 #include "retornar.c"
 #include "saida.c"
+#include "Area Restrita.c"
+#include "MenuAdm.c"
+#include "MenuFuncionario.c"
+
 
 int main(){
 	menu();

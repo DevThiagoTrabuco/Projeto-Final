@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-
 
 int loginFuncionarios(){
 	
@@ -58,15 +53,13 @@ int loginFuncionarios(){
 				for(column=0;column<aux;column++){
 					if(strcmp(employee[column],inputName)==0 && strcmp(code[column], inputCode)==0){
 						return 1;
-						
-					}
-					else{
-						printf("\nNome ou codigo incorretos digite novamente.\n");
-						system("pause");
-						break;
-					}	
-					system("cls");
+					}		
 				}
+				printf("\nNome ou codigo incorretos digite novamente.\n");
+				system("pause");
+				break;
+						
+				system("cls");
 			}
 		}
 	fclose(file);
