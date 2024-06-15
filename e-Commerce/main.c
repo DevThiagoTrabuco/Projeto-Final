@@ -30,7 +30,7 @@
 #include "resumo.c"
 #include "retornar.c"
 #include "saida.c"
-#include "Area Restrita.c"
+#include "AreaRestrita.c"
 #include "MenuAdm.c"
 #include "MenuFuncionario.c"
 
