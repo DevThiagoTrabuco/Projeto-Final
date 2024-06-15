@@ -9,7 +9,7 @@ Estoque:
 65#
 
 Produto: 
-AROOZ#
+ARROZ#
 Preco: 
 7,00#
 Codigo: 
