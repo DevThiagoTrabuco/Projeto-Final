@@ -23,7 +23,7 @@
 #include "LeituraAdm.c"
 #include "LeituraFuncionario.c"
 #include "LoginClientes.c"
-//#include "meioDePagamento.c"
+#include "meioDePagamento.c"
 #include "menu.c"
 #include "parcelas.c"
 #include "qrCode.c"

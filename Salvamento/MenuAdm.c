@@ -2,7 +2,7 @@ int menuAdm(){
 	
 	int input;
 	while(input!=6){
-		printf("\nMenu de Adm\n[1]-Cadastrar Funcionario.\n[2]-Editar Funcionario.\n[3]-Cadastrar Produto\n[4]-Editar Produto\n[5]-Cadastrar ADM\n[6]- Sair");
+		printf("\nMenu de Adm\n[1]-Cadastrar Funcionario.\n[2]-Editar Funcionario.\n[3]-Cadastrar Produto\n[4]-Editar Produto\n[5]-Cadastrar ADM\n[6]- Sair\n");
 		scanf("%d", &input);
 		fflush(stdin);
 		switch(input){

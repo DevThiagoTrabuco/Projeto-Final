@@ -1,6 +1,6 @@
 
 
-void comprar(){
+int comprar(){
 	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
 	char txt[200], productString[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
 	int column = 0, canCopy=0;
@@ -57,6 +57,7 @@ void comprar(){
 	int repeats=0;
 	int endWhile=0;
 	int answerPointer=0;
+	float totalPrice=0;
 	
 	file=fopen("ListaDeCompras.txt", "w");
 	
@@ -128,7 +129,7 @@ void comprar(){
 				}
 				break;
 			case 2:
-				carrinho(&answerPointer);
+				totalPrice=carrinho(&answerPointer);
 				
 				if(answerPointer!=0){
 					endWhile=1;
@@ -147,4 +148,6 @@ void comprar(){
 		aux++;
 	}
 	fclose(file2);
+	
+	return totalPrice;
 }

@@ -2,6 +2,7 @@
 void menu(){
 	char op, op2;
 	int exit;
+	float totalPrice;
 	setlocale(LC_ALL, "");
 		system("cls");
 		while(exit != 1){
@@ -11,17 +12,20 @@ void menu(){
 			fflush(stdin);
 			
 			switch(op){
-				case '1'://login Cliente
-					
+				case '1':
 					loginClient();
 					break;
-				case '2'://cadastro Cliente
+				case '2':
 					cadastrarClientes();
 					break;
-				case '3'://área restrita
-					comprar();
+				case '3':
+					
+					if(totalPrice=comprar()!=0){
+						payment(totalPrice);
+					}
+					
 					break;
-				case '4'://sair da aplicação
+				case '4':
 					areaRestrita();
 					break;
 				case '5'://sair da aplicação

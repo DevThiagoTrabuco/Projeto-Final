@@ -1,5 +1,5 @@
 
-int payment(){
+int payment(float totalPrice){
 	setlocale(LC_ALL, "");
 	int op, choice;
 	float price;
@@ -13,19 +13,19 @@ int payment(){
 			case 1:
 				cardData();
 				adress();
-				summary(price, 9, name);
+				summary(totalPrice, op);
 				break;
 			case 2:
 				cardData();
 				adress();
-				choice = installments(price);
-				summary(price, choice, name);
+				summary(totalPrice, op);
 				break;
 			case 3:
 				cpf();
 				adress();
-				summary(price, 0, name);
-				pix();	
+				pix();
+				op=0;
+				summary(totalPrice, op);
 				break;
 		}
 }
