@@ -1,6 +1,6 @@
 
 int loginAdm(){
-
+	setlocale(LC_ALL, "");
 	FILE * file = fopen("ADM.txt", "r");
 	if(file==NULL)
 		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");

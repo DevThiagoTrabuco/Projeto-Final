@@ -1,6 +1,6 @@
 int menuFuncionario(){
 	int input;
-	
+	setlocale(LC_ALL, "");
 	while(input!=3){
 		printf("\nMenu de funcionarios\n[1]-Cadastrar Produtos\n[2]-Editar Produtos\n[3]-Sair\n");
 		scanf("%d", &input);

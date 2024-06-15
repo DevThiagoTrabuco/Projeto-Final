@@ -1,6 +1,6 @@
 
 int editarProduto(){
-	
+	setlocale(LC_ALL, "");
 	while(1){
 	FILE * file = fopen("Produtos.txt", "r");
 	if(file==NULL)

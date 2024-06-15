@@ -34,7 +34,6 @@
 #include "MenuAdm.c"
 #include "MenuFuncionario.c"
 
-
 int main(){
 	menu();
 }

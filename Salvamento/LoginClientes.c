@@ -1,11 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 
 int loginClient(){	
 	char txt[30][30], textCode[50], codeAux[20];
-	
+	setlocale(LC_ALL, "");
     	FILE * file = fopen("Clientes.txt", "r");
     	if(file==NULL){
 			printf("Erro ao abrir o arquivo\nCriando um arquivo novo :)");

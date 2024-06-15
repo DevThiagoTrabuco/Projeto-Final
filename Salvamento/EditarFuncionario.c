@@ -1,6 +1,6 @@
 
 int editarFuncionario(){
-	
+	setlocale(LC_ALL, "");
 	while(1){
 	FILE * file = fopen("Funcionarios.txt", "r");
 	if(file==NULL)

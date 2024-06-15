@@ -1,5 +1,6 @@
 
 int loginFuncionarios(){
+	setlocale(LC_ALL, "");
 	
 	FILE * file = fopen("Funcionarios.txt", "r");
 	if(file==NULL)

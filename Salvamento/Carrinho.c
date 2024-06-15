@@ -1,12 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<math.h>
-#include<locale.h>
-#include<ctype.h>
-#include<windows.h>
+
 
 int carrinho(int *answerPointer){
+	setlocale(LC_ALL, "");
 	int  products=4, produtctPrices=0, productQuantity=2,productAux=0, productPriceAux=0, productQuantityAux=0;
 	char txt[200], productString[30][50], productPriceString[30][50], productQuantityString[30][50];	
 	int column = 0;

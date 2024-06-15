@@ -1,10 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<math.h>
-#include<locale.h>
-#include<ctype.h>
-#include<windows.h>
+
 
 void menu(){
 	char op, op2;

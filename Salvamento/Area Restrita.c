@@ -1,6 +1,6 @@
 void areaRestrita(){
 	int option;
-
+	setlocale(LC_ALL, "");
 	while(option!=3){
 		printf("\n[1]-Login como Funcionario\n[2]-Login como ADM\n[3]-Sair\n");
 		scanf("%d", &option);
