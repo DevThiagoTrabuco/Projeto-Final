@@ -122,10 +122,8 @@ int cadastrarClientes(){
 			fclose(file);
 			
 			printf("\nVoltando ao menu\n");
-			Sleep(200);
+			Sleep(2000);
 			system("cls");
 			return 1;
 	    }
-	    printf("Obrigado por usar a plataforma de cadastro de funcionarios:)\n\n");
-	    system("pause");
 	}

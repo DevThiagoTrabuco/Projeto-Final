@@ -18,11 +18,11 @@ void menu(){
 			switch(op){
 				case '1':
 					logged=loginClient();
-					getBack();
+					
 					break;
 				case '2':
 					cadastrarClientes();
-					getBack();
+					
 					break;
 				case '3':
 					if(logged==1){						
@@ -35,11 +35,11 @@ void menu(){
 						Sleep(2000);
 						system("cls");
 					}
-					getBack();
+					
 					break;
 				case '4':
 					areaRestrita();
-					getBack();
+					
 					break;
 				case '5':
 					exit = getOut(0);

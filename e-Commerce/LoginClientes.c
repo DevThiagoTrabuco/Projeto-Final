@@ -74,6 +74,7 @@ int loginClient(){
 					fflush(stdin);
 					if(choice=='s' || choice=='S'){
 						cadastrarClientes();
+						aux=-2;
 					}
 					else
 						break;
