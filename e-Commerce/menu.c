@@ -41,18 +41,18 @@ void menu(){
 						logged = loginClient();
 					}
 					else if(logged==1){
-						printf("\nDeseja deslogar?\nSim\nNão\n");
+						printf("\n||Deseja deslogar?\n||Sim\n||Não\n||");
 						scanf("%c", &op2);
 						fflush(stdin);
 						switch(op2){
 							case 'S':
-								printf("\nDeslogando...\n");
+								printf("||Deslogando...\n");
 								Sleep(2000);
 								op2=0;
 								logged=0;
 							break;
 							case 's':
-								printf("\nDeslogando...\n");
+								printf("||Deslogando...\n");
 								Sleep(2000);
 								op2=0;
 								logged=0;
@@ -67,7 +67,7 @@ void menu(){
 					if(logged == 0){
 						cadastrarClientes();
 					} else {
-						printf("\nUsuário já logado.\n");
+						printf("||Usuário já logado.\n");
 						Sleep(2000);
 						system("cls");
 					}
@@ -77,7 +77,7 @@ void menu(){
 						totalPrice = comprar();							
 						payment(totalPrice);
 					} else {
-						printf("\nLogue-se primeiro.\n");
+						printf("||Logue-se primeiro.\n");
 						Sleep(2000);
 						system("cls");
 					}
@@ -86,7 +86,7 @@ void menu(){
 					if(logged==0)
 						areaRestrita();
 					else{
-						printf("\nCliente detectado, por favor va para outra area.\n");
+						printf("||Cliente detectado, por favor va para outra area.\n");
 						Sleep(2000);
 						system("cls");
 					}
@@ -96,7 +96,7 @@ void menu(){
 					exit = getOut(0);
                 	break;
 				default:
-					printf("Opção inválida.\n");
+					printf("||Opção inválida.\n");
 					Sleep(1000);
 					break;
 			}
