@@ -33,6 +33,7 @@
 #include "AreaRestrita.c"
 #include "MenuAdm.c"
 #include "MenuFuncionario.c"
+#include "Cores.c"
 
 int main(){
 	menu();

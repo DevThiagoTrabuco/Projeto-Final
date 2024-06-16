@@ -12,13 +12,26 @@ void menu(){
 		while(exit != 1){
 			fflush(stdin);
 			printf("\t\t##################\n\t\t#\t\t #\n\t\t#      MENU      #\n\t\t#\t\t #\n\t\t##################\n\n\tBem vindo(a) à loja [PLACEHOLDER]!!");
+			printf("\n---------------------------------------------------------");
+			printf("\n||\t\t\t\t\t\t\t||");
 			if(logged==0){
-				printf("\n\n[1] - Login (Não logado) \n[2] - Cadastro\n[3] - Ir as compras\n[4] - Área restrita\n[5] - Fechar aplicação");
+				printf("\n||[1] - Login ");
+				color(4);
+				printf("(Não logado)");
+				color(7);
+				printf("\t\t\t\t||");
+				printf("\n||[2] - Cadastro\t\t\t\t\t||\n||[3] - Ir as compras\t\t\t\t\t||\n||[4] - Área restrita\t\t\t\t\t||\n||[5] - Fechar aplicação\t\t\t\t||");
 			}
 			else{
-				printf("\n\n[1] - Deslogar (Logado) \n[2] - Cadastro\n[3] - Ir as compras\n[4] - Área restrita\n[5] - Fechar aplicação");
+				printf("\n||[1] - Deslogar ");
+				color(1);
+				printf("(Logado)");
+				color(7);
+				printf("\t\t\t\t||");
+				printf("\n||[2] - Cadastro\t\t\t\t\t||\n||[3] - Ir as compras\t\t\t\t\t||\n||[4] - Área restrita\t\t\t\t\t||\n||[5] - Fechar aplicação\t\t\t\t||");
 			}
-			printf("\n\nPor favor, escolha uma opção: ");
+			printf("\n---------------------------------------------------------");
+			printf("\n||Por favor, escolha uma opção: \t\t\t\n||");
 			scanf("%c", &op);
 			fflush(stdin);
 			
