@@ -1,3 +1,6 @@
+int menuFuncionario();
+int menuAdm();
+
 void areaRestrita(){
 	int option;
 	setlocale(LC_ALL, "");
@@ -21,14 +24,9 @@ void areaRestrita(){
 				else
 					break;
 				break;
-			case 3:
-				return 1;
 			default:
 				printf("\nOpção invalida\n");
 				break;
 		}
 	}
-	return 1;
-	
-	
 }

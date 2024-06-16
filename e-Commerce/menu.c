@@ -1,4 +1,5 @@
-
+void areaRestrita();
+int getOut();
 
 void menu(){
 	char op, op2;

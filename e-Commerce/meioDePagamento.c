@@ -1,3 +1,5 @@
+void summary(float totalPrice, int op);
+void pix();
 
 int payment(float totalPrice){
 	setlocale(LC_ALL, "");
