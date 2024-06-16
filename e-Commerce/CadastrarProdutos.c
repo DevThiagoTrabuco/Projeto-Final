@@ -62,20 +62,25 @@ void cadastrarProdutos(){
 					}	
 				}
 			int aux=number;
-	    	
+	    	system("cls");
+	    	color(8);
+			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# CADASTRO DE PRODUTOS   #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			color(7);
+			printf("\n-------------------------------------------------\n");
+			
 			fflush(stdin);
-			printf("Digite o nome do produto a ser cadastrado: ");
+			printf("||Digite o nome do produto a ser cadastrado: ");
 			gets(productsStruct[0].productName);
 			strupr(productsStruct[0].productName);	
 			fflush(stdin);
 			
 			productsStruct[0].code=number+1;
 			
-			printf("\nDigite o preco do produto: ");
+			printf("\n||Digite o preco do produto: ");
 			scanf("%f", &productsStruct[0].price);
 			fflush(stdin);
 			
-			printf("\nDigite quantos produtos tem no estoque: ");
+			printf("\n||Digite quantos produtos tem no estoque: ");
 			scanf("%d", &productsStruct[0].stock);
 			fflush(stdin);
 			
@@ -86,11 +91,11 @@ void cadastrarProdutos(){
 			
 			fclose(file);
 			
-			printf("\nProduto: %s\nCodigo: %d\nPreco: %.2f\n", productsStruct[0].productName, productsStruct[0].code, productsStruct[0].price);
-			printf("\nDeseja cadastrar mais algum produto?\n[1]Sim\n[2]Nao\n");
+			printf("\n||Produto: %s\n||Codigo: %d\n||Preco: %.2f\n", productsStruct[0].productName, productsStruct[0].code, productsStruct[0].price);
+			printf("\n||Deseja cadastrar mais algum produto?\n[1]Sim\n[2]Nao\n");
 			scanf("%d", &choice);
 			system("cls");
 	    }
-	    printf("Obrigado por usar a plataforma de cadastro de produtos:)\n\n");
-	    system("pause");
+	    printf("||Obrigado por usar a plataforma de cadastro de produtos:)\n\n");
+	    Sleep(2000);
 }

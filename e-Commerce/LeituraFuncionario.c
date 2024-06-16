@@ -42,13 +42,19 @@ int loginFuncionarios(){
 		int canCopyCode=0;
 		char inputName[50];
 		char inputCode[50];
+		char option;
 		
-		while(1){
+		while(option!='s' || option!='S'){
+			system("cls");
+			color(5);
+			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# LOGIN DE FUNCIONARIO   #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			color(7);
+			printf("\n-------------------------------------------------\n");
 			if(canCopyName==0){
-				printf("Digite seu nome: ");
+				printf("||Digite seu nome: ");
 				gets(inputName);
 				fflush(stdin);
-				printf("Agora digite o codigo: ");
+				printf("||Agora digite o codigo: ");
 				gets(inputCode);
 				strupr(inputName);
 				for(column=0;column<aux;column++){
@@ -56,11 +62,26 @@ int loginFuncionarios(){
 						return 1;
 					}		
 				}
-				printf("\nNome ou codigo incorretos digite novamente.\n");
-				system("pause");
-				break;
-						
-				system("cls");
+				printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?(Sim/Não).\n||");
+				scanf("%c", &option);
+				switch(option){
+					case 'S':
+						printf("||\n||Retornando...");
+						Sleep(1000);
+						fflush(stdin);
+						areaRestrita();
+						break;
+					case 's':
+						printf("||\n||Retornando...");
+						Sleep(1000);
+						fflush(stdin);
+						areaRestrita();
+						break;
+					default:
+						fflush(stdin);
+						break;
+				}
+				
 			}
 		}
 	fclose(file);

@@ -73,10 +73,14 @@ int loginClient(){
 					return returns;
 				}
 				else{
-					printf("\n||Nome ou codigo incorretos.\n||Deseja ir ao cadastro?(Sim/Não)\n||");
+					printf("\n||Nome ou codigo incorretos.\n||Deseja ir para o menu ou para o cadastro?(Menu/Cadastro/Continuar)\n||");
 					scanf("%c", &choice);
 					fflush(stdin);
-					if(choice=='s' || choice=='S'){
+					if (choice=='M' || choice=='m'){
+						menu();
+						break;
+					}
+					if(choice=='C' || choice=='c'){
 						cadastrarClientes();
 						aux=-2;
 					}
