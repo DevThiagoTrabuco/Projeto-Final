@@ -50,7 +50,7 @@ int loginFuncionarios(){
 			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# LOGIN DE FUNCIONARIO   #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 			color(7);
 			printf("\n-------------------------------------------------\n");
-			if(canCopyName==0){
+			
 				printf("||Digite seu nome: ");
 				gets(inputName);
 				fflush(stdin);
@@ -83,7 +83,9 @@ int loginFuncionarios(){
 				}
 				
 			}
+			fclose(file);
 		}
-	fclose(file);
-}
+	
+
+
 

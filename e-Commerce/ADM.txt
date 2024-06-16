@@ -1,15 +1,15 @@
 
-Funcionario: 
+Administrador: 
 JORGE#
 Codigo: 
 1#
 
-Funcionario: 
+Administrador: 
 JILSON#
 Codigo: 
 2#
 
-Funcionario: 
+Administrador: 
 PAULA#
 Codigo: 
 3#

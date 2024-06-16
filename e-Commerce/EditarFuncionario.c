@@ -47,22 +47,31 @@ int editarFuncionario(){
 	char replaceName[50];
 	
 		system("cls");
-		printf("\n\nO que deseja editar?\n1-Nome do funcionario.\n2-Excluir funcionario.\n3-Voltar ao menu\n");
+    	color(8);
+		printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# EDIÇÃO DE FUNCIONARIOS #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+		color(7);
+		printf("\n-------------------------------------------------\n");
+		
+		printf("||O que deseja editar?\n||[1]-Nome do funcionario.\n||[2]-Excluir funcionario.\n||[3]-Voltar ao menu\n");
 		scanf("%d", &input);
 		fflush(stdin);
 		switch(input){
 			case 1:
 				system("cls");
-				printf("\nEdição de nome\n\nDe qual funcionario deseja editar o nome?");
+				color(5);
+				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#    EDIÇÃO DE NOME     #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+				color(7);
+				printf("\n-------------------------------------------------\n");
+				printf("||De qual funcionario deseja editar o nome?");
 				for(int i=0;i<aux;i++){
-					printf("\n\n%d- Funcionario: %s", i+1,employee[i]);
-					printf("\nCodigo: %s", code[i]);
+					printf("\n||%d- Funcionario: %s", i+1,employee[i]);
+					printf("\n||Codigo: %s", code[i]);
 				}
-				printf("\n\n");
+				printf("\n||\n||");
 				scanf("%d", &input);
 				
 				if(input>aux){
-					printf("\nOpção invalida.\n");
+					printf("\n||Opção invalida.\n||");
 					Sleep(1000);
 					break;
 				}
@@ -70,15 +79,15 @@ int editarFuncionario(){
 				fflush(stdin);
 				inputAux=input;
 				system("cls");
-				printf("\nO funcionario %s é o selecionado\n", employee[inputAux-1]);
+				printf("\n||O funcionario %s é o selecionado\n", employee[inputAux-1]);
 				strcpy(employee[inputAux-1], "");
 				
 				
-				printf("\nPara qual nome deseja alterar?\n");
+				printf("\n||Para qual nome deseja alterar?\n");
 				gets(employee[inputAux-1]);
 				strupr(employee[inputAux-1]);
 				fflush(stdin);
-				printf("\nNome alterado com sucesso.\n");
+				printf("\n||Nome alterado com sucesso.\n");
 				Sleep(1000);
 				
 				file = fopen("Funcionarios.txt", "w");
@@ -91,16 +100,21 @@ int editarFuncionario(){
 			
 			case 2:
 				system("cls");
-				printf("\nRemoção de funcionario.\n\nLista de funcionarios:");
+				color(4);
+				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# REMOÇÃO DE FUNCIONARIO #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+				color(7);
+				printf("\n-------------------------------------------------\n||");
+				
+				printf("||Lista de funcionarios:");
 				for(int i=0;i<aux;i++){
-					printf("\n\n%d- Funcionario: %s", i+1,employee[i]);
-					printf("\nCodigo: %s", code[i]);
+					printf("\n||%d- Funcionario: %s", i+1,employee[i]);
+					printf("\n||Codigo: %s", code[i]);
 				}
-				printf("\n\nQual funcionario deseja remover?\n");
+				printf("\n||\n||Qual funcionario deseja remover?\n");
 				scanf("%d", &input);
 				
 				if(input>aux){
-					printf("\nOpção invalida.\n");
+					printf("\n||Opção invalida.\n");
 					break;
 				}
 				
@@ -120,7 +134,7 @@ int editarFuncionario(){
 				break;
 			case 3:
 				system("cls");
-				printf("Voltando ao menu\n");
+				printf("||Voltando ao menu\n");
 				Sleep(1000);
 				break;
 		}

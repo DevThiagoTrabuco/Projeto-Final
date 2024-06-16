@@ -73,14 +73,14 @@ int loginClient(){
 					return returns;
 				}
 				else{
-					printf("\n||Nome ou codigo incorretos.\n||Deseja ir para o menu ou para o cadastro?(Menu/Cadastro/Continuar)\n||");
+					printf("\n||Nome ou codigo incorretos.\n||Deseja ir para o menu ou para o cadastro?\n||[1]Menu\n||[2]Cadastro\n||[3]Continuar\n||");
 					scanf("%c", &choice);
 					fflush(stdin);
-					if (choice=='M' || choice=='m'){
+					if (choice=='1'){
 						menu();
 						break;
 					}
-					if(choice=='C' || choice=='c'){
+					if(choice=='2'){
 						cadastrarClientes();
 						aux=-2;
 					}

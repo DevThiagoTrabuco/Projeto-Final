@@ -11,7 +11,7 @@ void menu(){
 		system("cls");
 		while(exit != 1){
 			fflush(stdin);
-			printf("\t\t##################\n\t\t#\t\t #\n\t\t#      MENU      #\n\t\t#\t\t #\n\t\t##################\n\n\tBem vindo(a) à loja [PLACEHOLDER]!!");
+			printf("\t\t##################\n\t\t#\t\t #\n\t\t#      MENU      #\n\t\t#\t\t #\n\t\t##################\n\n\t Bem vindo(a) à loja VALMART!!");
 			printf("\n---------------------------------------------------------");
 			printf("\n||\t\t\t\t\t\t\t||");
 			if(logged==0){

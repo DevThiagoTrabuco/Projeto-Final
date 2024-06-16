@@ -61,7 +61,7 @@ int editarProduto(){
 		color(7);
 		printf("\n-------------------------------------------------\n");
 			
-		printf("||O que deseja editar?\n||1-Nome do produto.\n||2-Preço do produto\n||3-Estoque do produto\n||4-Excluir produto.\n||5-Voltar ao menu.\n||");
+		printf("||O que deseja editar?\n||[1]-Nome do produto.\n||[2]-Preço do produto\n||[3]-Estoque do produto\n||[4]-Excluir produto.\n||[5]-Voltar ao menu.\n||");
 		scanf("%d", &input);
 		fflush(stdin);
 		switch(input){

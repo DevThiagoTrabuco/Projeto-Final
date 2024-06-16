@@ -52,19 +52,24 @@ void cadastrarAdms(){
 				}
 			}
 			int aux=admAux;
-			
+			system("cls");
+			color(5);
+			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# CADASTRO DE ADMINISTRADOR #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			color(7);
+			printf("\n-------------------------------------------------\n");
+		
 			fflush(stdin);
-			printf("Digite o nome do Administrador a ser cadastrado: ");
+			printf("||Digite o nome do Administrador a ser cadastrado: ");
 			gets(admsStruct[0].admName);
 			strupr(admsStruct[0].admName);
 			
 			admsStruct[0].code=number+1;
 			
-			fprintf(file,"\nFuncionario: \n%s#\n", admsStruct[0].admName);
+			fprintf(file,"\nAdministrador: \n%s#\n", admsStruct[0].admName);
 			fprintf(file, "Codigo: \n%d#\n", admsStruct[0].code);
 			fclose(file);
-			printf("\nFuncionario: %s\nCodigo: %d\n", admsStruct[0].admName, admsStruct[0].code);
-			printf("\nDeseja cadastrar mais algum Administrador?\n[1]Sim\n[2]Nao\n");
+			printf("\n||Administrador: %s\n||Codigo: %d\n||", admsStruct[0].admName, admsStruct[0].code);
+			printf("\n||Deseja cadastrar mais algum Administrador?\n[1]Sim\n[2]Nao\n");
 			scanf("%d", &choice);
 			system("cls");
 	    }

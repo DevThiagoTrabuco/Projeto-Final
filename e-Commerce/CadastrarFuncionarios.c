@@ -53,9 +53,14 @@ void cadastrarFuncionarios(){
 				}
 			}
 			int aux=employeeAux;
+			system("cls");
+			color(6);
+			printf("\t\t###########################\n\t\t#\t\t\t  #\n\t\t# CADASTRO DE FUNCIONARIO #\n\t\t#\t\t\t  #\n\t\t###########################\n\n");
+			color(7);
+			printf("\n-------------------------------------------------\n");
 			
 			fflush(stdin);
-			printf("Digite o nome do Funcionario a ser cadastrado: ");
+			printf("||Digite o nome do Funcionario a ser cadastrado: ");
 			gets(employeesStruct[0].employeeName);
 			strupr(employeesStruct[0].employeeName);
 			
@@ -64,11 +69,11 @@ void cadastrarFuncionarios(){
 			fprintf(file,"\nFuncionario: \n%s#\n", employeesStruct[0].employeeName);
 			fprintf(file, "Codigo: \n%d#\n", employeesStruct[0].code);
 			fclose(file);
-			printf("\nFuncionario: %s\nCodigo: %d\n", employeesStruct[0].employeeName, employeesStruct[0].code);
-			printf("\nDeseja cadastrar mais algum funcionario?\n[1]Sim\n[2]Nao\n");
+			printf("\n||Funcionario: %s\n||Codigo: %d\n||", employeesStruct[0].employeeName, employeesStruct[0].code);
+			printf("\n||Deseja cadastrar mais algum funcionario?\n||[1]Sim\n||[2]Nao\n||");
 			scanf("%d", &choice);
 			system("cls");
 	    }
-	    printf("Obrigado por usar a plataforma de cadastro de Funcionarios:)\n\n");
+	    printf("||Obrigado por usar a plataforma de cadastro de Funcionarios:)\n\n");
 	    system("pause");
 }

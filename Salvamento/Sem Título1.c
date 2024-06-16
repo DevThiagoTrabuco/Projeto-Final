@@ -36,6 +36,8 @@ int main(){
 	color(7);
 	
 	color(9);
-	printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# LOGIN DE CLIENTE    \t #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+	printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#\t  COMPRAS  \t #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 	color(7);
+	
+	
 }
