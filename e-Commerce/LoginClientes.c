@@ -9,7 +9,6 @@ int loginClient(){
 			system("pause");
 			system("cls");
 		}
-		
 		int clientNames=4, emails=2, passwords=0, clientNameAux=0 , clientFirstNameAux=0, clientSurNameAux=0, emailsAux=0,  passwordAux=0;
 		char clientName[30][50], email[30][50], password[30][50];
 		int column = 0, canCopy=0;
@@ -58,10 +57,15 @@ int loginClient(){
 		
 		while(aux!=-2){
 			system("cls");
-			printf("Digite Email: ");
+			color(6);
+			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#   LOGIN DE CLIENTE\t #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			color(7);
+			printf("\n---------------------------------------------------------\n");
+			
+			printf("||Digite o Email: ");
 			gets(emailInput);
 			fflush(stdin);
-			printf("Agora digite a senha: ");
+			printf("||Agora digite a senha: ");
 			gets(passwordInput);
 			strupr(emailInput);
 			for(column=0;column<aux;column++){
@@ -69,8 +73,7 @@ int loginClient(){
 					return returns;
 				}
 				else{
-					system("cls");
-					printf("\nNome ou codigo incorretos.\nDeseja ir ao cadastro?(S/N)\n");
+					printf("\n||Nome ou codigo incorretos.\n||Deseja ir ao cadastro?(Sim/Não)\n||");
 					scanf("%c", &choice);
 					fflush(stdin);
 					if(choice=='s' || choice=='S'){
@@ -80,7 +83,6 @@ int loginClient(){
 					else
 						break;
 				}	
-				system("cls");
 			}
 			
 		}

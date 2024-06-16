@@ -9,8 +9,9 @@ void areaRestrita(){
 		color(1);
 		printf("\t\t##################\n\t\t#\t\t #\n\t\t# AREA RESTRITA  #\n\t\t#\t\t #\n\t\t##################\n\n");
 		color(7);
+		printf("\n-------------------------------------------------------");
 		
-		printf("\n[1]-Login como Funcionario\n[2]-Login como ADM\n[3]-Sair\n");
+		printf("\n||[1]-Login como Funcionario\n||[2]-Login como ADM\n||[3]-Sair\n||");
 		scanf("%d", &option);
 		fflush(stdin);
 		switch(option){
@@ -30,7 +31,7 @@ void areaRestrita(){
 					break;
 				break;
 			default:
-				printf("\nOpção invalida\n");
+				printf("\n||Opção invalida\n");
 				break;
 		}
 	}
