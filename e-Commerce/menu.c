@@ -1,4 +1,5 @@
 void areaRestrita();
+void getBack();
 int getOut();
 
 void menu(){
@@ -17,13 +18,15 @@ void menu(){
 			switch(op){
 				case '1':
 					logged=loginClient();
+					getBack();
 					break;
 				case '2':
 					cadastrarClientes();
+					getBack();
 					break;
 				case '3':
 					if(logged==1){						
-						totalPrice=comprar();							
+						totalPrice = comprar();							
 						payment(totalPrice);
 						
 					}
@@ -32,13 +35,14 @@ void menu(){
 						Sleep(2000);
 						system("cls");
 					}
-					
+					getBack();
 					break;
 				case '4':
 					areaRestrita();
+					getBack();
 					break;
-				case '5'://sair da aplicação
-					exit = getOut();
+				case '5':
+					exit = getOut(0);
                 	break;
 				default:
 					printf("Opção inválida.\n");

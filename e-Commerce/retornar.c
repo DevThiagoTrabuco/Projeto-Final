@@ -1,3 +1,5 @@
+int getOut(int saida);
+
 void getBack(){
 	int x;
 	char op[1];
@@ -10,8 +12,10 @@ void getBack(){
 		
 			switch(op[0]){
 				case 'S':
-					printf("Poggers.\n");
-					system("pause");
+					x = 1;
+					break;
+				case 'N':
+					getOut(1);
 					x = 1;
 					break;
 				default:
