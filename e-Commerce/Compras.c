@@ -67,7 +67,7 @@ int comprar(){
 		}
 		system("cls");
 		
-		printf("\nO que deseja fazer?\n1-Lista de compras\n2-Carrinho\n");
+		printf("\nO que deseja fazer?\n1-Lista de Produtos\n2-Carrinho\n");
 		scanf("%d", &input);
 
 		switch(input){

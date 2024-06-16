@@ -6,7 +6,7 @@ Preco:
 Codigo: 
 1#
 Estoque: 
-5.50#
+43#
 
 Produto: 
 ARROZ#
@@ -15,4 +15,4 @@ Preco:
 Codigo: 
 2#
 Estoque: 
-7,00#
+45#

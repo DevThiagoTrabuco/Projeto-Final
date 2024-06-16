@@ -7,12 +7,11 @@ int carrinho(int *answerPointer){
 	int column = 0;
 	int number = 0;
 	
+	printf("\nCarrinho\n");
 		FILE * file=fopen("ListaDeCompras.txt", "r");
 		if(file==NULL)
 			printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio de compras.");	
 			
-		printf("\nCarrinho\n")		;
-		
 		while(!feof(file)){
 			if(fgets(txt,500,file)){
 			int line=0;
@@ -57,7 +56,6 @@ int carrinho(int *answerPointer){
 		while(choicePrincipalMenu!=3){
 			system("cls");
 			totalPrice=0;
-			
 			for(int i=0; i<aux;i++){
 				if( productQuantityString[i]==0){
 					continue;
@@ -67,14 +65,22 @@ int carrinho(int *answerPointer){
 				printf("Preço total: R$%s\n", productPriceString[i]);
 				totalPrice=totalPrice+atof(productPriceString[i]);
 			}
-			printf("\nValor total das compras: R$%.2f\n\nDigite uma opcao\n1-Finalizar Compra.\n2-Editar Pedido.\n3-Voltar as Compras.\n", totalPrice);
+			printf("\nValor total das compras: R$%.2f\n\nDigite uma opcao\n1-Finalizar Compra.\n2-Editar Pedido.\n3-Voltar as Compras.\n4-Voltar ao menu\n", totalPrice);
 			scanf("%d", &choicePrincipalMenu);
 			switch(choicePrincipalMenu){
 				case 1:
-					printf("\nFinalizando a compra.");
-					Sleep(2000);
-					*answerPointer+=1;
-					return totalPrice;
+					if(totalPrice!=0.0){
+						printf("\nFinalizando a compra.");
+						Sleep(2000);
+						*answerPointer+=1;
+						return totalPrice;
+					}
+					else{
+						printf("\nVoce não tem compras no carrinho.\n");
+						Sleep(2000);
+						fflush(stdin);
+						break;
+					}
 					break;
 				case 2:
 					fflush(stdin);
@@ -144,6 +150,8 @@ int carrinho(int *answerPointer){
 					}
 				case 3:
 					break;
+				case 4:
+					menu();
 			}
 			
 		}	

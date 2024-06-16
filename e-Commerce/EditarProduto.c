@@ -238,6 +238,7 @@ int editarProduto(){
 				system("cls");
 				printf("||Voltando ao menu\n||");
 				Sleep(1000);
+				return 1;
 				break;
 		}
 	}

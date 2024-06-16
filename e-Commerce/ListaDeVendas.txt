@@ -1,0 +1,18 @@
+
+PRODUTO: 
+JORGE#
+QUANTIDADE: 
+5#
+PRODUTO: 
+ARROZ#
+QUANTIDADE: 
+5#
+Valor total dos produtos: 
+75.00#
+
+PRODUTO: 
+JORGE#
+QUANTIDADE: 
+2#
+Valor total dos produtos: 
+10,00#
