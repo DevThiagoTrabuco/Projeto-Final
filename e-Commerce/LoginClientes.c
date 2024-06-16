@@ -57,7 +57,7 @@ int loginClient(){
 		int returns=1;
 		
 		while(aux!=-2){
-			
+			system("cls");
 			printf("Digite Email: ");
 			gets(emailInput);
 			fflush(stdin);
@@ -69,7 +69,8 @@ int loginClient(){
 					return returns;
 				}
 				else{
-					printf("\nNome ou codigo incorretos.\nDeseja ir ao cadastro?\nSim\nNao\n");
+					system("cls");
+					printf("\nNome ou codigo incorretos.\nDeseja ir ao cadastro?(S/N)\n");
 					scanf("%c", &choice);
 					fflush(stdin);
 					if(choice=='s' || choice=='S'){

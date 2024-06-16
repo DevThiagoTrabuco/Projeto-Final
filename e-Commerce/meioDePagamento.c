@@ -1,11 +1,11 @@
-void summary(float totalPrice, int op);
+void cardData();
+int installments(float totalPrice);
 void pix();
+void summary(float totalPrice, int op);
 
 int payment(float totalPrice){
 	setlocale(LC_ALL, "");
 	int op, choice;
-	float price;
-	char name[40];
 	
 		printf("Escolha o método de pagamento:\n[1] - Cartão de débito\n[2] - Cartão de crédito\n[3] - PIX\n");
 		scanf("%d", &op);
@@ -15,18 +15,19 @@ int payment(float totalPrice){
 			case 1:
 				cardData();
 				adress();
-				summary(totalPrice, op);
+				summary(totalPrice, 1);
 				break;
 			case 2:
 				cardData();
+				choice = installments(totalPrice);
 				adress();
-				summary(totalPrice, op);
+				summary(totalPrice, choice);
 				break;
 			case 3:
 				cpf();
 				adress();
 				pix();
-				summary(totalPrice, op);
+				summary(totalPrice, 0);
 				break;
 		}
 }
