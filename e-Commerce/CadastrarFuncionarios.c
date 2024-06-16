@@ -55,7 +55,7 @@ void cadastrarFuncionarios(){
 			int aux=employeeAux;
 			system("cls");
 			color(6);
-			printf("\t\t###########################\n\t\t#\t\t\t  #\n\t\t# CADASTRO DE FUNCIONARIO #\n\t\t#\t\t\t  #\n\t\t###########################\n\n");
+			printf("\t\t############################\n\t\t#\t\t\t   #\n\t\t# CADASTRO DE FUNCIONÁRIOS #\n\t\t#\t\t\t   #\n\t\t############################\n\n");
 			color(7);
 			printf("\n-------------------------------------------------\n");
 			

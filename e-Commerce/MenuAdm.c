@@ -4,7 +4,7 @@ int menuAdm(){
 	while(input!=6){
 		system("cls");
 		color(6);
-		printf("\t\t##################\n\t\t#\t\t #\n\t\t#  MENU DE ADM   #\n\t\t#\t\t #\n\t\t##################\n\n");
+		printf("\t\t#############################\n\t\t#\t\t\t    #\n\t\t#   MENU DE ADMINISTRADOR   #\n\t\t#\t\t\t    #\n\t\t#############################\n\n");
 		color(7);
 		printf("\n-------------------------------------------------\n");
 		printf("||[1]-Cadastrar Funcionario.\n||[2]-Editar Funcionario.\n||[3]-Cadastrar Produto\n||[4]-Editar Produto\n||[5]-Cadastrar ADM\n||[6]-Sair\n");

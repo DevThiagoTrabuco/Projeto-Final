@@ -54,7 +54,7 @@ void cadastrarAdms(){
 			int aux=admAux;
 			system("cls");
 			color(5);
-			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# CADASTRO DE ADMINISTRADOR #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			printf("\t\t####################################\n\t\t#\t\t\t\t   #\n\t\t#    CADASTRO DE ADMINISTRADORES   #\n\t\t#\t\t\t\t   #\n\t\t####################################\n\n");
 			color(7);
 			printf("\n-------------------------------------------------\n");
 		

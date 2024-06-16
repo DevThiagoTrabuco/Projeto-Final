@@ -48,36 +48,36 @@ void summary(float totalPrice, int op){
 		printf("Quantidade: %s\n", productQuantityString[i]);
 		printf("Preço dos produtos: %s\n", productPriceString[i]);
 	}
-	printf("\n\nValor total dos produtos: R$%.2f\n", totalPrice);
+	printf("\n\n||Valor total dos produtos: R$%.2f\n", totalPrice);
 	if(totalPrice!=0.0){
 		FILE * file2=fopen("ListaDeVendas.txt", "a+");
 		for(int i=0; i<number;i++){
 			if(i==0){
-				fprintf(file2,"\nPRODUTO: \n%s#\n",productString[i]);
-				fprintf(file2,"QUANTIDADE: \n%s#\n", productQuantityString[i]);
+				fprintf(file2,"\n||PRODUTO: \n%s#\n",productString[i]);
+				fprintf(file2,"||QUANTIDADE: \n%s#\n", productQuantityString[i]);
 			}
 			else if(i!=0){
-				fprintf(file2,"PRODUTO: \n%s#\n",productString[i]);
-				fprintf(file2,"QUANTIDADE: \n%s#\n", productQuantityString[i]);
+				fprintf(file2,"||PRODUTO: \n%s#\n",productString[i]);
+				fprintf(file2,"||QUANTIDADE: \n%s#\n", productQuantityString[i]);
 			}
 		}
-		fprintf(file2,"Valor total dos produtos: \n%.2f#\n", totalPrice);
+		fprintf(file2,"||Valor total dos produtos: \n%.2f#\n", totalPrice);
 		fclose(file2);
 	}
 	
 	
 	if(op == 1)
-		printf("\nMétodo de pagamento: Á vista\n\n");
+		printf("\n||Método de pagamento: Á vista\n\n");
 	else if(op == 2 || op == 3) 
-		printf("\nMétodo de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op);
+		printf("\n||Método de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op);
 	else if(op == 4)
-		printf("\nMétodo de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op + (totalPrice*0.10));
+		printf("\n||Método de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op + (totalPrice*0.10));
 	else if(op == 5)
-		printf("\nMétodo de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op + (totalPrice*0.20));
+		printf("\n||Método de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op + (totalPrice*0.20));
 	else if(op == 6)
-		printf("\nMétodo de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op + (totalPrice*0.30));
+		printf("\n||Método de pagamento: %dX de R$%.2f\n\n", op, totalPrice / op + (totalPrice*0.30));
 	else if(op == 0)
-		printf("\nMétodo de pagamento: PIX\n\n");
+		printf("\n||Método de pagamento: PIX\n\n");
 	system("pause");
 	system("cls");
 }

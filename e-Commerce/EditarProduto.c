@@ -57,7 +57,7 @@ int editarProduto(){
 	
 		system("cls");
     	color(8);
-		printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#  EDIÇÃO DE PRODUTOS    #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+		printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#   EDIÇÃO DE PRODUTOS   #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 		color(7);
 		printf("\n-------------------------------------------------\n");
 			
@@ -67,10 +67,6 @@ int editarProduto(){
 		switch(input){
 			case 1:
 				system("cls");
-				color(5);
-				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#    EDIÇÃO DE NOME     #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
-				color(7);
-				printf("\n-------------------------------------------------\n");
 				printf("||De qual produto deseja editar o nome?");
 				for(int i=0;i<aux;i++){
 					printf("\n||%d- Produto: %s", i+1,productString[i]);
@@ -110,9 +106,6 @@ int editarProduto(){
 
 			case 2:
 				system("cls");
-				color(4);
-				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#    EDIÇÃO DE PREÇO     #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
-				color(7);
 				printf("\n-------------------------------------------------\n");
 				
 				printf("||De qual produto deseja editar o preço?");
@@ -154,9 +147,6 @@ int editarProduto(){
 			
 			case 3:
 				system("cls");
-				color(4);
-				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#   EDIÇÃO DE ESTOQUE    #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
-				color(7);
 				printf("\n-------------------------------------------------\n||");
 				
 				printf("\n||De qual produto deseja editar o Estoque?");

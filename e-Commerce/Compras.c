@@ -67,7 +67,7 @@ int comprar(){
 		}
 		system("cls");
 		
-		printf("\nO que deseja fazer?\n1-Lista de Produtos\n2-Carrinho\n");
+		printf("\n||O que deseja fazer?\n||[1]-Lista de Produtos\n||[2]-Carrinho\n");
 		scanf("%d", &input);
 
 		switch(input){
@@ -77,12 +77,12 @@ int comprar(){
 					printf("\tPreco: %s\n", productPriceString[i]);
 					printf("\tCodigo: %s\n\n", productCodeString[i]);
 				}
-				printf("\nQual produto deseja adicionar no carrinho?\n");
+				printf("\n||Qual produto deseja adicionar no carrinho?\n");
 				scanf("%d", &input);
 
 				inputAux=input-1;
 				if(input<0){
-					printf("\nOpcao invalida.\n");
+					printf("\n||Opcao invalida.\n");
 					system("pause");
 					system("cls");
 					continue;
@@ -91,18 +91,18 @@ int comprar(){
 					continue;
 				}
 				if(input>number){
-					printf("Produto nao existe");
+					printf("||Produto nao existe");
 					
 					system("pause");
 					system("cls");
 					continue;
 				}
-				printf("O produto selecionado e o %s\n", productString[inputAux]);
-				printf("Digite quantos %s voce deseja: ", productString[inputAux]);
+				printf("||O produto selecionado e o %s\n", productString[inputAux]);
+				printf("||Digite quantos %s voce deseja: ", productString[inputAux]);
 				scanf("%d", &input);
 				productStockAux=input;
 				if(productStockAux>atoi(productStockString[inputAux])){
-					printf("\nNumero de produtos excede o estoque\n");
+					printf("\n||Numero de produtos excede o estoque\n");
 					system("pause");
 					continue;
 				}
@@ -110,7 +110,7 @@ int comprar(){
 					continue;
 				}
 				if(input<0){
-					printf("\nOpcao invalida.\n");
+					printf("\n||Opcao invalida.\n");
 					system("pause");
 					system("cls");
 				}

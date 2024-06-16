@@ -65,7 +65,7 @@ int loginAdm(){
 			}			
 		}
 		
-		printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?(Sim/Não).\n||");
+		printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?||[1]Sim\n||[2]Nao\n||");
 				scanf("%c", &option);
 				switch(option){
 					case 'S':

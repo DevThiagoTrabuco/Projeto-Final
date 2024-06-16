@@ -4,7 +4,7 @@ int menuFuncionario(){
 	while(input!=3){
 		system("cls");
 		color(3);
-		printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#   MENU DE FUNCIONARIO  #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+		printf("\t\t#########################\n\t\t#\t\t\t#\n\t\t#  MENU DE FUNCIONÁRIO  #\n\t\t#\t\t\t#\n\t\t#########################\n\n");
 		color(7);
 		printf("\n-------------------------------------------------\n||");
 		printf("\n||[1]-Cadastrar Produtos\n||[2]-Editar Produtos\n||[3]-Sair\n||");

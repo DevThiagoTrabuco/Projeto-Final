@@ -47,7 +47,7 @@ int loginFuncionarios(){
 		while(option!='s' || option!='S'){
 			system("cls");
 			color(5);
-			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# LOGIN DE FUNCIONARIO   #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#  LOGIN DE FUNCIONÁRIO  #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 			color(7);
 			printf("\n-------------------------------------------------\n");
 			
@@ -62,7 +62,7 @@ int loginFuncionarios(){
 						return 1;
 					}		
 				}
-				printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?(Sim/Não).\n||");
+				printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?||[1]Sim\n||[2]Nao\n||");
 				scanf("%c", &option);
 				switch(option){
 					case 'S':

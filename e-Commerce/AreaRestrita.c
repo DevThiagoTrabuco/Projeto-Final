@@ -7,7 +7,7 @@ void areaRestrita(){
 	while(option!=3){
 		system("cls");
 		color(1);
-		printf("\t\t##################\n\t\t#\t\t #\n\t\t# AREA RESTRITA  #\n\t\t#\t\t #\n\t\t##################\n\n");
+		printf("\t\t###################\n\t\t#\t\t  #\n\t\t#  AREA RESTRITA  #\n\t\t#\t\t  #\n\t\t###################\n\n");
 		color(7);
 		printf("\n-------------------------------------------------");
 		printf("\n||[1]-Login como Funcionario\t\t\t||\n||[2]-Login como ADM\t\t\t\t||\n||[3]-Sair\t\t\t\t\t||");

@@ -10,19 +10,18 @@ typedef struct{
 Adresses shipment;
 
 void adress(){
-	system("cls");
-	printf("Endereço:\n");
+	printf("\n||Endereço:\n");
 	scanf(" %s", &shipment.street);
 	fflush(stdin);
-	printf("Número:\n");
+	printf("||Número:\n");
 	scanf(" %d", &shipment.houseNmbr);
-	printf("Bairro:\n");
+	printf("||Bairro:\n");
 	scanf(" %s", &shipment.neighborhood);
 	fflush(stdin);
-	printf("Cidade:\n");
+	printf("||Cidade:\n");
 	scanf(" %s", &shipment.city);
 	fflush(stdin);
-	printf("UF:\n");
+	printf("||UF:\n");
 	scanf(" %s", &shipment.uf);
 	system("pause");
 	system("cls");

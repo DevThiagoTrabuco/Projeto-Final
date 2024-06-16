@@ -48,7 +48,7 @@ int editarFuncionario(){
 	
 		system("cls");
     	color(8);
-		printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# EDIÇÃO DE FUNCIONARIOS #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+		printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# EDIÇÃO DE FUNCIONÁRIOS #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 		color(7);
 		printf("\n-------------------------------------------------\n");
 		
@@ -58,10 +58,6 @@ int editarFuncionario(){
 		switch(input){
 			case 1:
 				system("cls");
-				color(5);
-				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#    EDIÇÃO DE NOME     #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
-				color(7);
-				printf("\n-------------------------------------------------\n");
 				printf("||De qual funcionario deseja editar o nome?");
 				for(int i=0;i<aux;i++){
 					printf("\n||%d- Funcionario: %s", i+1,employee[i]);
@@ -101,7 +97,7 @@ int editarFuncionario(){
 			case 2:
 				system("cls");
 				color(4);
-				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# REMOÇÃO DE FUNCIONARIO #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+				printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# REMOÇÃO DE FUNCIONÁRIO #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 				color(7);
 				printf("\n-------------------------------------------------\n||");
 				

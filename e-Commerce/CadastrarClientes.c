@@ -14,7 +14,7 @@ int cadastrarClientes(){
 		while(choice!=2){
 			system("cls");
 			color(5);
-			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#  CADASTRO DE CLIENTE\t #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#  CADASTRO DE CLIENTES  #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 			color(7);
 			printf("\n---------------------------------------------------------------------------------");
 			
@@ -69,13 +69,13 @@ int cadastrarClientes(){
 				
 				fflush(stdin);
 				if(doisFatoresNome==0){
-					printf("\n||Digite o nome e sobrenome do Cliente a ser cadastrado: ");
+					printf("\n||Digite o seu nome e sobrenome: ");
 					gets(client[0].name);
 					strupr(client[0].name);
 					doisFatoresNome=1;
 				}
 				if(doisFatoresSenha==0){
-					printf("\n||Digite a senha do Cliente a ser cadastrado: ");
+					printf("\n||Digite a sua senha: ");
 					gets(client[0].password);
 					while(1){
 						if(strlen(client[0].password)<5){
@@ -88,17 +88,17 @@ int cadastrarClientes(){
 					doisFatoresSenha=1;
 				}
 				if(doisFatoresEmail==0){
-					printf("\n||Digite o e-mail do Cliente a ser cadastrado: ");
+					printf("\n||Digite o seu e-mail: ");
 					gets(client[0].email);
 					strupr(client[0].email);
 					doisFatoresEmail=1;
 				}
 				for(coluna=0;coluna<aux;coluna++){
 					if(strcmp(email[coluna], client[0].email)==0){
-						printf("\n||Email de cliente já cadastrado.\n\n");
+						printf("\n||Email já cadastrado.\n\n");
 						canCopy=0;
 						Sleep(2000);
-						printf("\n||Deseja ir para o menu?\nSim\nNão\n");
+						printf("\n||Deseja ir para o menu?\n||Sim\n||Não\n");
 						scanf("%c", &choiceEmail);
 						fflush(stdin);
 						

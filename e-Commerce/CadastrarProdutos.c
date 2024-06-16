@@ -64,7 +64,7 @@ void cadastrarProdutos(){
 			int aux=number;
 	    	system("cls");
 	    	color(8);
-			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# CADASTRO DE PRODUTOS   #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#  CADASTRO DE PRODUTOS  #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
 			color(7);
 			printf("\n-------------------------------------------------\n");
 			
@@ -92,10 +92,10 @@ void cadastrarProdutos(){
 			fclose(file);
 			
 			printf("\n||Produto: %s\n||Codigo: %d\n||Preco: %.2f\n", productsStruct[0].productName, productsStruct[0].code, productsStruct[0].price);
-			printf("\n||Deseja cadastrar mais algum produto?\n[1]Sim\n[2]Nao\n");
+			printf("\n||Deseja cadastrar mais algum produto?\n||[1]Sim\n||[2]Nao\n||");
 			scanf("%d", &choice);
 			system("cls");
 	    }
-	    printf("||Obrigado por usar a plataforma de cadastro de produtos:)\n\n");
+	    printf("||Obrigado por usar a plataforma de cadastro de produtos:)\n");
 	    Sleep(2000);
 }

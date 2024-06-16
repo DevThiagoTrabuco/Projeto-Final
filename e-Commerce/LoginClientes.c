@@ -58,7 +58,7 @@ int loginClient(){
 		while(aux!=-2){
 			system("cls");
 			color(6);
-			printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t#   LOGIN DE CLIENTE\t #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
+			printf("\t\t########################\n\t\t#\t\t       #\n\t\t#   LOGIN DE CLIENTE   #\n\t\t#\t\t       #\n\t\t########################\n\n");
 			color(7);
 			printf("\n---------------------------------------------------------\n");
 			

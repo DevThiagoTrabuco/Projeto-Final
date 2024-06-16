@@ -13,7 +13,6 @@ void menu(){
 			fflush(stdin);
 			printf("\t\t##################\n\t\t#\t\t #\n\t\t#      MENU      #\n\t\t#\t\t #\n\t\t##################\n\n\t Bem vindo(a) à loja VALMART!!");
 			printf("\n---------------------------------------------------------");
-			printf("\n||\t\t\t\t\t\t\t||");
 			if(logged==0){
 				printf("\n||[1] - Login ");
 				color(4);

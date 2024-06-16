@@ -5,7 +5,7 @@ void getBack(){
 	char op[1];
 		
 	while(x != 1){
-		printf("Deseja retornar ao menu?(S/N): ");
+		printf("||Deseja retornar ao menu?\n||[1]Sim\n||[2]Nao\n||: ");
 	    scanf("%c", &op);
 	    fflush(stdin);
 		strupr(op);
@@ -19,7 +19,7 @@ void getBack(){
 					x = 1;
 					break;
 				default:
-					printf("Opção inválida\n");
+					printf("||Opção inválida\n");
 					system("pause");
 					x = 0;
 					break;
