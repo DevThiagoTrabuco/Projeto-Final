@@ -10,6 +10,7 @@ void menu(){
 	setlocale(LC_ALL, "");
 		system("cls");
 		while(exit != 1){
+			fflush(stdin);
 			printf("\t\t##################\n\t\t#\t\t #\n\t\t#      MENU      #\n\t\t#\t\t #\n\t\t##################\n\n\tBem vindo(a) à loja [PLACEHOLDER]!!");
 			if(logged==0){
 				printf("\n\n[1] - Login (Não logado) \n[2] - Cadastro\n[3] - Ir as compras\n[4] - Área restrita\n[5] - Fechar aplicação");
