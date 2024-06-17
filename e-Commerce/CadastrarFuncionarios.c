@@ -7,7 +7,7 @@ typedef struct{
 void cadastrarFuncionarios(){
 	setlocale(LC_ALL,"");
 	int choice=0, i=0;
-	char txt[30][30], textCode[50], codeAux[20];
+	char txt[MAX_CHAR][MAX_CHAR], textCode[MAX_CHAR], codeAux[MAX_CHAR];
 	
 	Employeess employeesStruct[1];
 		while(choice!=2){
@@ -22,7 +22,7 @@ void cadastrarFuncionarios(){
 			}
 			
 			int codes=0, employees=2, codAux=0, employeeAux=0;
-			char employee[30][50], code[30][50];
+			char employee[MAX_CHAR][MAX_CHAR], code[MAX_CHAR][MAX_CHAR];
 			int column = 0, canCopy=0;
 			
 			while(!feof(file)){

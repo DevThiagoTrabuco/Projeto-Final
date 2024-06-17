@@ -7,7 +7,7 @@ int loginAdm(){
 		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
 		
 	int codes=0, adms=2, codeAux=0, admAux=0;
-	char txt[30][30], input[50], adm[30][50], code[30][50];
+	char txt[MAX_CHAR][MAX_CHAR], input[MAX_CHAR], adm[MAX_CHAR][MAX_CHAR], code[MAX_CHAR][MAX_CHAR];
 	int column = 0, canCopy=0;
 	
 	while(!feof(file)){

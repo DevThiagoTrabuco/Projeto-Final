@@ -6,7 +6,7 @@ int editarFuncionario(){
 	if(file==NULL)
 		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
 	int codes=0, employees=2, codeAux=0, employeeAux=0;
-		char txt[30][30], employee[30][50], code[30][50];
+		char txt[MAX_CHAR][MAX_CHAR], employee[MAX_CHAR][MAX_CHAR], code[MAX_CHAR][MAX_CHAR];
 		int column = 0, number=0;
 	
 	while(!feof(file)){

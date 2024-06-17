@@ -6,7 +6,7 @@ int editarProduto(){
 	if(file==NULL)
 		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
 	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
-	char txt[200], productString[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
+	char txt[MAX_CHAR], productString[MAX_CHAR][MAX_CHAR], productCodeString[MAX_CHAR][MAX_CHAR], productPriceString[MAX_CHAR][MAX_CHAR], productStockString[MAX_CHAR][MAX_CHAR];	
 	int column = 0, canCopy=0;
 	int number = 0;
 	
