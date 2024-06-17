@@ -75,7 +75,7 @@ int editarProduto(){
 				scanf("%d", &input);
 				
 				if(input>aux){
-					printf("\n||Opção invalida.\n");
+					printf("\n||Opção inválida.\n");
 					Sleep(2000);
 					break;
 				}
@@ -86,7 +86,7 @@ int editarProduto(){
 				printf("\n||O produto %s é o selecionado\n", productString[inputAux-1]);
 				strcpy(productString[inputAux-1], "");
 
-				printf("\n||Digite o novo nome.\n");
+				printf("\n||Digite o novo nome.\n||");
 				gets(productString[inputAux-1]);
 				strupr(productString[inputAux-1]);
 			
@@ -117,7 +117,7 @@ int editarProduto(){
 				scanf("%d", &input);
 				
 				if(input>aux){
-					printf("\n||Opção invalida.\n||");
+					printf("\n||Opção inválida.\n||");
 					Sleep(2000);
 					break;
 				}
@@ -132,7 +132,7 @@ int editarProduto(){
 				gets(productPriceString[inputAux-1]);
 				strupr(productPriceString[inputAux-1]);
 			
-				printf("\n||Preço alterado com sucesso.\n||");
+				printf("\n||Preço alterado com sucesso.\n");
 				system("pause");
 				
 				file = fopen("Produtos.txt", "w");
@@ -158,7 +158,7 @@ int editarProduto(){
 				scanf("%d", &input);
 				
 				if(input>aux){
-					printf("\n||Opção invalida.\n||");
+					printf("\n||Opção inválida.\n||");
 					Sleep(2000);
 					break;
 				}
@@ -173,7 +173,7 @@ int editarProduto(){
 				gets(productStockString[inputAux-1]);
 				strupr(productStockString[inputAux-1]);
 			
-				printf("\n||Estoque alterado com sucesso.\n||");
+				printf("\n||Estoque alterado com sucesso.\n");
 				system("pause");
 				
 				file = fopen("Produtos.txt", "w");
@@ -226,7 +226,7 @@ int editarProduto(){
 				break;
 			case 5:
 				system("cls");
-				printf("||Voltando ao menu\n||");
+				printf("||Voltando ao menu\n");
 				Sleep(1000);
 				return 1;
 				break;

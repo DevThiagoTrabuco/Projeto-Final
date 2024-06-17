@@ -7,7 +7,8 @@ int payment(float totalPrice){
 	setlocale(LC_ALL, "");
 	int op, choice;
 	
-		printf("\n||Escolha o método de pagamento:\n||[1] - Cartão de débito\n||[2] - Cartão de crédito\n||[3] - PIX\n");
+	system("cls");
+		printf("\n||Escolha o método de pagamento:\n||[1] - Cartão de débito\n||[2] - Cartão de crédito\n||[3] - PIX\n||");
 		scanf("%d", &op);
 		fflush(stdin);
 		

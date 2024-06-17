@@ -35,14 +35,10 @@ int loginClient(){
 				}
 				if(emails%7==0){
 					strcpy(email[emailsAux], txt[column]);
-					printf("%s", email[emailsAux]);
-					system("pause");
 					emailsAux++;	
 				}
 				if(passwords%7==0){
 					strcpy(password[passwordAux], txt[column]);
-					printf("%s", password[passwordAux]);
-					system("pause");
 					passwordAux++;
 				}
 				column++;
@@ -82,11 +78,10 @@ int loginClient(){
 				menu();
 				break;
 			}
-			if(choice=='2'){
+			else if(choice=='2'){
 				cadastrarClientes();
 				aux=-2;
 			}
-			else
-				break;
+			
 		}
 }

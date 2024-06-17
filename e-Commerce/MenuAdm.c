@@ -8,7 +8,7 @@ int menuAdm(){
 		printf("\t\t#############################\n\t\t#\t\t\t    #\n\t\t#   MENU DE ADMINISTRADOR   #\n\t\t#\t\t\t    #\n\t\t#############################\n\n");
 		color(7);
 		printf("\n-------------------------------------------------\n");
-		printf("||[1]-Cadastrar Funcionario.\n||[2]-Editar Funcionario.\n||[3]-Cadastrar Produto\n||[4]-Editar Produto\n||[5]-Cadastrar ADM\n||[6]-Lista de Vendas\n||[7]-Sair\n");
+		printf("||\n||[1]-Cadastrar Funcionario.\n||[2]-Editar Funcionario.\n||[3]-Cadastrar Produto\n||[4]-Editar Produto\n||[5]-Cadastrar ADM\n||[6]-Lista de Vendas\n||[7]-Sair\n||");
 		printf("\n-------------------------------------------------\n");
 		
 		printf("\n||Por favor, escolha uma opção: \t\t\t\n||");		
@@ -36,7 +36,7 @@ int menuAdm(){
 			case 7:
 				return 1;
 			default:
-				printf("\n||Opção invalida\n||");
+				printf("\n||Opção inválida\n||");
 		}
 	}
 	

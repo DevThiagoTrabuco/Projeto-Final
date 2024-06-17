@@ -39,6 +39,6 @@
 
 
 int main(){
-	inicio();
+	//inicio();
 	menu();
 }

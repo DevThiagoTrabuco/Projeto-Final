@@ -1,7 +1,8 @@
 
 int editarFuncionario(){
 	setlocale(LC_ALL, "");
-	while(1){
+	int input;
+	while(input != 3){
 	FILE * file = fopen("Funcionarios.txt", "r");
 	if(file==NULL)
 		printf("Erro ao abrir o arquivo\nDica: crie um arquivo por meio do cadastro.");
@@ -39,7 +40,6 @@ int editarFuncionario(){
 	}
 	fclose(file);
 	int aux=employeeAux;
-	int input;
 	int inputAux;
 	int replaceCode;
 	int canCopy=0;
@@ -52,7 +52,7 @@ int editarFuncionario(){
 		color(7);
 		printf("\n-------------------------------------------------\n");
 		
-		printf("||O que deseja editar?\n||[1]-Nome do funcionario.\n||[2]-Excluir funcionario.\n||[3]-Voltar ao menu\n");
+		printf("||O que deseja editar?\n||[1]-Nome do funcionario.\n||[2]-Excluir funcionario.\n||[3]-Voltar ao menu\n||");
 		scanf("%d", &input);
 		fflush(stdin);
 		switch(input){
@@ -67,7 +67,7 @@ int editarFuncionario(){
 				scanf("%d", &input);
 				
 				if(input>aux){
-					printf("\n||Opção invalida.\n||");
+					printf("\n||Opção inválida.\n||");
 					Sleep(1000);
 					break;
 				}
@@ -79,7 +79,7 @@ int editarFuncionario(){
 				strcpy(employee[inputAux-1], "");
 				
 				
-				printf("\n||Para qual nome deseja alterar?\n");
+				printf("\n||Para qual nome deseja alterar?\n||");
 				gets(employee[inputAux-1]);
 				strupr(employee[inputAux-1]);
 				fflush(stdin);
@@ -110,7 +110,7 @@ int editarFuncionario(){
 				scanf("%d", &input);
 				
 				if(input>aux){
-					printf("\n||Opção invalida.\n");
+					printf("\n||Opção inválida.\n");
 					break;
 				}
 				

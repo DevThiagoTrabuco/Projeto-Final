@@ -38,9 +38,9 @@ void menu(){
 				case '1':
 					if(logged==0){
 						logged = loginClient();
-					}
-					else if(logged==1){
-						printf("\n||Deseja deslogar?\n||Sim\n||Não\n||");
+					} else if(logged==1){
+						system("cls");
+						printf("\n||Deseja deslogar?\n||Sim   ||Não\n||");
 						scanf("%c", &op2);
 						fflush(stdin);
 						switch(op2){
@@ -49,17 +49,17 @@ void menu(){
 								Sleep(2000);
 								op2=0;
 								logged=0;
-							break;
+								break;
 							case 's':
 								printf("||Deslogando...\n");
 								Sleep(2000);
 								op2=0;
 								logged=0;
-							break;
-							
+								break;
 							default:
 								break;
 						}
+						system("cls");
 					}
 					break;
 				case '2':
@@ -71,7 +71,7 @@ void menu(){
 						system("cls");
 					}
 					break;
-				case '3':
+				case '3':	
 					if(logged == 1){						
 						totalPrice = comprar();							
 						payment(totalPrice);
@@ -85,7 +85,7 @@ void menu(){
 					if(logged==0)
 						areaRestrita();
 					else{
-						printf("||Cliente detectado, por favor va para outra area.\n");
+						printf("||Cliente detectado, por favor escolha outra opção.\n");
 						Sleep(2000);
 						system("cls");
 					}

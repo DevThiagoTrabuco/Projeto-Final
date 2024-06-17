@@ -2,7 +2,7 @@
 int comprar(){
 	setlocale(LC_ALL, "");
 	int productCodes=2, products=6, produtctPrices=4, productStocks=0, productCodeAux=0, productAux=0, productPriceAux=0, productStockAux=0;
-	char txt[200], productString[30][50], productCodeString[30][50], productPriceString[30][50], productStockString[30][50];	
+	char txt[MAX_CHAR], productString[MAX_CHAR][MAX_CHAR], productCodeString[MAX_CHAR][MAX_CHAR], productPriceString[MAX_CHAR][MAX_CHAR], productStockString[MAX_CHAR][MAX_CHAR];	
 	int column = 0, canCopy=0;
 	int number = 0;
 	
@@ -66,8 +66,10 @@ int comprar(){
 			file=fopen("ListaDeCompras.txt", "a+");
 		}
 		system("cls");
-		
-		printf("\n||O que deseja fazer?\n||[1]-Lista de Produtos\n||[2]-Carrinho\n");
+		color(4);
+		printf("\t\t#############\n\t\t#\t    #\n\t\t#  COMPRAS  #\n\t\t#\t    #\n\t\t#############\n\n");
+		color(7);
+		printf("\n||O que deseja fazer?\n||[1]-Lista de Produtos\n||[2]-Carrinho\n||");
 		scanf("%d", &input);
 
 		switch(input){
@@ -77,12 +79,12 @@ int comprar(){
 					printf("\tPreco: %s\n", productPriceString[i]);
 					printf("\tCodigo: %s\n\n", productCodeString[i]);
 				}
-				printf("\n||Qual produto deseja adicionar no carrinho?\n");
+				printf("\n||Qual produto deseja adicionar no carrinho?\n||");
 				scanf("%d", &input);
 
 				inputAux=input-1;
 				if(input<0){
-					printf("\n||Opcao invalida.\n");
+					printf("\n||Opcao inválida.\n");
 					system("pause");
 					system("cls");
 					continue;
@@ -91,13 +93,13 @@ int comprar(){
 					continue;
 				}
 				if(input>number){
-					printf("||Produto nao existe");
+					printf("||Produto não existe");
 					
 					system("pause");
 					system("cls");
 					continue;
 				}
-				printf("||O produto selecionado e o %s\n", productString[inputAux]);
+				printf("||O produto selecionado é o %s\n", productString[inputAux]);
 				printf("||Digite quantos %s voce deseja: ", productString[inputAux]);
 				scanf("%d", &input);
 				productStockAux=input;
@@ -110,7 +112,7 @@ int comprar(){
 					continue;
 				}
 				if(input<0){
-					printf("\n||Opcao invalida.\n");
+					printf("\n||Opcao inválida.\n");
 					system("pause");
 					system("cls");
 				}

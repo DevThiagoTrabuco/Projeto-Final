@@ -10,7 +10,8 @@ typedef struct{
 Adresses shipment;
 
 void adress(){
-	printf("\n||Endereço:\n");
+	system("cls");
+	printf("||Endereço:\n");
 	scanf(" %s", &shipment.street);
 	fflush(stdin);
 	printf("||Número:\n");
