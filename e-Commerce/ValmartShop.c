@@ -6,7 +6,7 @@
 #include<ctype.h>
 #include<windows.h>
 
-#define MAX_CHAR 80
+#define MAX_CHAR 300
 
 #include "CadastrarAdm.c"
 #include "CadastrarClientes.c"
@@ -35,8 +35,10 @@
 #include "MenuFuncionario.c"
 #include "Cores.c"
 #include "TelaDeInicio.c"
+#include "ListaDeVendass.c"
+
 
 int main(){
-	inicio();
+	//inicio();
 	menu();
 }

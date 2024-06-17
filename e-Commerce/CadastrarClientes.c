@@ -1,14 +1,13 @@
 typedef struct{
-	char name[20];
-	char surname[50];
-	char email[50];
-	char password[20];
+	char name[MAX_CHAR];
+	char email[MAX_CHAR];
+	char password[MAX_CHAR];
 }Register;
 
 int cadastrarClientes(){
 	setlocale(LC_ALL,"");
 	int choice=0, i=0;
-	char txt[30][30], textCode[50], codeAux[20];
+	char txt[MAX_CHAR][MAX_CHAR], textCode[MAX_CHAR], codeAux[MAX_CHAR];
 	
 	Register client[1];
 		while(choice!=2){
@@ -27,7 +26,7 @@ int cadastrarClientes(){
 			}
 			
 			int clientNames=4, emails=2, passwords=0, clientNameAux=0 , clientFirstNameAux=0, clientSurNameAux=0, emailsAux=0,  passwordAux=0;
-			char clientName[30][50], email[30][50], password[30][50];
+			char clientName[MAX_CHAR][MAX_CHAR], email[MAX_CHAR][MAX_CHAR], password[MAX_CHAR][MAX_CHAR];
 			int coluna = 0, canCopy=0;
 			
 			while(!feof(file)){

@@ -1,6 +1,6 @@
 
 int loginClient(){	
-	char txt[30][30], textCode[50], codeAux[20];
+	char txt[MAX_CHAR][MAX_CHAR], textCode[MAX_CHAR], codeAux[MAX_CHAR];
 	setlocale(LC_ALL, "");
     	FILE * file = fopen("Clientes.txt", "r");
     	if(file==NULL){
@@ -10,7 +10,7 @@ int loginClient(){
 			system("cls");
 		}
 		int clientNames=4, emails=2, passwords=0, clientNameAux=0 , clientFirstNameAux=0, clientSurNameAux=0, emailsAux=0,  passwordAux=0;
-		char clientName[30][50], email[30][50], password[30][50];
+		char clientName[MAX_CHAR][MAX_CHAR], email[MAX_CHAR][MAX_CHAR], password[MAX_CHAR][MAX_CHAR];
 		int column = 0, canCopy=0;
 		
 		while(!feof(file)){
@@ -24,19 +24,17 @@ int loginClient(){
 					line++;
 				}while(txt[column][line]!='\n');
 
-				if(clientNames ||  emails || passwords){
+				if(clientNames ||  emails ){
 					clientNames++;
 					emails++;
 					passwords++;
 				}
 				if(clientNames%7==0){
 					strcpy(clientName[clientNameAux], txt[column]);
-					
 					clientNameAux++;
 				}
 				if(emails%7==0){
 					strcpy(email[emailsAux], txt[column]);
-					
 					emailsAux++;	
 				}
 				if(passwords%7==0){
@@ -88,7 +86,5 @@ int loginClient(){
 						break;
 				}	
 			}
-			
 		}
-	fclose(file);
 }

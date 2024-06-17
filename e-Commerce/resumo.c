@@ -1,7 +1,7 @@
 void summary(float totalPrice, int op){
 	setlocale(LC_ALL, "");
 	int  products=4, produtctPrices=0, productQuantity=2,productAux=0, productPriceAux=0, productQuantityAux=0;
-	char txt[200], productString[30][50], productPriceString[30][50], productQuantityString[30][50];	
+	char txt[MAX_CHAR], productString[MAX_CHAR][MAX_CHAR], productPriceString[MAX_CHAR][MAX_CHAR], productQuantityString[MAX_CHAR][MAX_CHAR];	
 	int column = 0;
 	int number = 0;
 	
@@ -49,19 +49,38 @@ void summary(float totalPrice, int op){
 		printf("Preço dos produtos: %s\n", productPriceString[i]);
 	}
 	printf("\n\n||Valor total dos produtos: R$%.2f\n", totalPrice);
+	
+	FILE * file3=fopen("ListaDeVendas.txt", "r");
+	int sale=0;
+	char txt2[MAX_CHAR];
+	while(!feof(file3)){
+		int line=0;
+		if(fgets(txt2,500,file3)){
+			do{
+				if(txt2[line]=='#'){
+					sale++;
+					break;
+				}
+				line++;
+			}while(txt2[line]!='\n');
+		}
+	}
+	fclose(file3);
+	
 	if(totalPrice!=0.0){
 		FILE * file2=fopen("ListaDeVendas.txt", "a+");
-		for(int i=0; i<number;i++){
+		for(int i=0;i<number;i++){
 			if(i==0){
-				fprintf(file2,"\n||PRODUTO: \n%s#\n",productString[i]);
-				fprintf(file2,"||QUANTIDADE: \n%s#\n", productQuantityString[i]);
+				fprintf(file2,"\nVENDA: \n%d#\n", sale+1);
+				fprintf(file2,"PRODUTO: \n%s\n",productString[i]);
+				fprintf(file2,"QUANTIDADE: \n%s\n", productQuantityString[i]);
 			}
 			else if(i!=0){
-				fprintf(file2,"||PRODUTO: \n%s#\n",productString[i]);
-				fprintf(file2,"||QUANTIDADE: \n%s#\n", productQuantityString[i]);
+				fprintf(file2,"PRODUTO: \n%s\n",productString[i]);
+				fprintf(file2,"QUANTIDADE: \n%s\n", productQuantityString[i]);
 			}
 		}
-		fprintf(file2,"||Valor total dos produtos: \n%.2f#\n", totalPrice);
+		fprintf(file2,"Valor total dos produtos: \n%.2f\n", totalPrice);
 		fclose(file2);
 	}
 	
