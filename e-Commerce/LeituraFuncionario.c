@@ -62,7 +62,7 @@ int loginFuncionarios(){
 						return 1;
 					}		
 				}
-				printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?||[1]Sim\n||[2]Nao\n||");
+				printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?\n||[1]Sim   ||[2]Nao\n||");
 				scanf("%c", &option);
 				switch(option){
 					case 'S':

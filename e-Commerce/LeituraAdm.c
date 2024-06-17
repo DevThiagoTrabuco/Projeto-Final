@@ -1,3 +1,4 @@
+void areaRestrita();
 
 int loginAdm(){
 	setlocale(LC_ALL, "");
@@ -65,7 +66,7 @@ int loginAdm(){
 			}			
 		}
 		
-		printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?||[1]Sim\n||[2]Nao\n||");
+		printf("\n||Nome ou codigo incorretos deseja retornar a area anterior?\n||Sim   ||Não\n||");
 				scanf("%c", &option);
 				switch(option){
 					case 'S':

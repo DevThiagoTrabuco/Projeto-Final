@@ -34,7 +34,9 @@
 #include "MenuAdm.c"
 #include "MenuFuncionario.c"
 #include "Cores.c"
+#include "TelaDeInicio.c"
 
 int main(){
+	inicio();
 	menu();
 }

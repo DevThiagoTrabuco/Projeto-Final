@@ -1,4 +1,4 @@
-
+void menu();
 
 int carrinho(int *answerPointer){
 	setlocale(LC_ALL, "");

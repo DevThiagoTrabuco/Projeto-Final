@@ -1,3 +1,4 @@
+void color(int colors);
 
 typedef struct{
 	int code;

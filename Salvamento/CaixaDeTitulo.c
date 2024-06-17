@@ -7,13 +7,13 @@
 
 int main(){
 
-	//color(1);
-	//printf("\t\t###################\n\t\t#\t\t  #\n\t\t#  AREA RESTRITA  #\n\t\t#\t\t  #\n\t\t###################\n\n");
-	//color(7);
+	color(1);
+	printf("\t\t###################\n\t\t#\t\t  #\n\t\t#  AREA RESTRITA  #\n\t\t#\t\t  #\n\t\t###################\n\n");
+	color(7);
 	
 	color(2);
 	printf("\t\t#############################\n\t\t#\t\t\t    #\n\t\t#   MENU DE ADMINISTRADOR   #\n\t\t#\t\t\t    #\n\t\t#############################\n\n");
-	color(7);/*
+	color(7);
 	
 	color(3);
 	printf("\t\t####################################\n\t\t#\t\t\t\t   #\n\t\t#    CADASTRO DE ADMINISTRADORES   #\n\t\t#\t\t\t\t   #\n\t\t####################################\n\n");
@@ -65,5 +65,5 @@ int main(){
 	
 	color(5);
 	printf("\t\t##########################\n\t\t#\t\t\t #\n\t\t# LOGIN DE ADMINISTRADOR #\n\t\t#\t\t\t #\n\t\t##########################\n\n");
-	color(7);*/
+	color(7);
 }
