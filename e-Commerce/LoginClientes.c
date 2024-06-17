@@ -14,7 +14,7 @@ int loginClient(){
 		int column = 0, canCopy=0;
 		
 		while(!feof(file)){
-			if(fgets(txt[column],500,file)){
+			if(fgets(txt[column],2000,file)){
 			int line=0;
 				do{
 					if(txt[column][line]=='#'){
@@ -35,10 +35,14 @@ int loginClient(){
 				}
 				if(emails%7==0){
 					strcpy(email[emailsAux], txt[column]);
+					printf("%s", email[emailsAux]);
+					system("pause");
 					emailsAux++;	
 				}
 				if(passwords%7==0){
 					strcpy(password[passwordAux], txt[column]);
+					printf("%s", password[passwordAux]);
+					system("pause");
 					passwordAux++;
 				}
 				column++;
@@ -48,8 +52,8 @@ int loginClient(){
 		int aux=clientNameAux;
 		int canCopyEmail=0;
 		int canCopyPassword=0;
-		char emailInput[50];
-		char passwordInput[50];
+		char emailInput[MAX_CHAR];
+		char passwordInput[MAX_CHAR];
 		char choice;
 		int returns=1;
 		
@@ -69,22 +73,20 @@ int loginClient(){
 			for(column=0;column<aux;column++){
 				if(strcmp(email[column],emailInput)==0 && strcmp(password[column], passwordInput)==0){
 					return returns;
-				}
-				else{
-					printf("\n||Nome ou codigo incorretos.\n||Deseja ir para o menu ou para o cadastro?\n||[1]Menu\n||[2]Cadastro\n||[3]Continuar\n||");
-					scanf("%c", &choice);
-					fflush(stdin);
-					if (choice=='1'){
-						menu();
-						break;
-					}
-					if(choice=='2'){
-						cadastrarClientes();
-						aux=-2;
-					}
-					else
-						break;
 				}	
 			}
+			printf("\n||Nome ou codigo incorretos.\n||Deseja ir para o menu ou para o cadastro?\n||[1]Menu\n||[2]Cadastro\n||[3]Continuar\n||");
+			scanf("%c", &choice);
+			fflush(stdin);
+			if (choice=='1'){
+				menu();
+				break;
+			}
+			if(choice=='2'){
+				cadastrarClientes();
+				aux=-2;
+			}
+			else
+				break;
 		}
 }
