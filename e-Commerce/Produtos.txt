@@ -6,13 +6,4 @@ Preco:
 Codigo: 
 1#
 Estoque: 
-50#
-
-Produto: 
-ARROZ#
-Preco: 
-7,00#
-Codigo: 
-2#
-Estoque: 
-35#
+5.50#

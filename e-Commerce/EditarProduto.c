@@ -140,7 +140,7 @@ int editarProduto(){
 					fprintf(file,"\nProduto: \n%s#\n", productString[i]);
 					fprintf(file, "Preco: \n%s#\n", productPriceString[i]);
 					fprintf(file, "Codigo: \n%s#\n", productCodeString[i]);
-					fprintf(file, "Estoque: \n%d#\n", productStockString[i]);
+					fprintf(file, "Estoque: \n%s#\n", productStockString[i]);
 				}
 				fclose(file);
 				break;

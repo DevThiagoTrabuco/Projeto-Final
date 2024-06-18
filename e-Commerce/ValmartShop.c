@@ -18,7 +18,7 @@
 #include "dadosDoCartao.c"
 #include "EditarFuncionario.c"
 #include "EditarProduto.c"
-#include "endereço.c"
+#include "endereco.c"
 #include "flush.c"
 #include "LeituraAdm.c"
 #include "LeituraFuncionario.c"
@@ -39,6 +39,6 @@
 
 
 int main(){
-	inicio();
+	//inicio();
 	menu();
 }
