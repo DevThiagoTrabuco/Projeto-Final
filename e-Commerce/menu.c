@@ -3,7 +3,8 @@ void getBack();
 int getOut();
 
 void menu(){
-	char op, op2;
+	char op;
+	int op2;
 	int exit;
 	int logged=0;
 	float totalPrice;
@@ -40,17 +41,11 @@ void menu(){
 						logged = loginClient();
 					} else if(logged==1){
 						system("cls");
-						printf("\n||Deseja deslogar?\n||Sim   ||Não\n||");
-						scanf("%c", &op2);
+						printf("\n||Deseja deslogar?\n||[1]-Sim   ||[2]-Não\n||");
+						scanf("%d", &op2);
 						fflush(stdin);
 						switch(op2){
-							case 'S':
-								printf("||Deslogando...\n");
-								Sleep(2000);
-								op2=0;
-								logged=0;
-								break;
-							case 's':
+							case 1:
 								printf("||Deslogando...\n");
 								Sleep(2000);
 								op2=0;

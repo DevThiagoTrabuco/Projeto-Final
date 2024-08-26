@@ -2,20 +2,19 @@ void printLoad();
 
 int getOut(int saida){
 	int i = 1;
-	char op[1];
+	int op;
 	system("cls");
 	if(saida == 0){
-		printf("||Deseja sair?\n||Sim   ||Não\n||");
-	    scanf("%c", &op);
-		strupr(op);
+		printf("||Deseja sair?\n||[1]-Sim   ||[2]-Não\n||");
+	    scanf("%d", &op);
 	    fflush(stdin);
 		
-		switch(op[0]){
-			case 'S':
+		switch(op){
+			case 1:
 				system("cls");
 		        printLoad("||Até o seu próximo acesso :]");
 				abort();
-			case 'N':
+			case 2:
 				return 0;
 			default:
 				printf("||Opção inválida\n");

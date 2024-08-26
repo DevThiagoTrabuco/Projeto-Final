@@ -40,3 +40,10 @@ Email:
 SILVIOCARLOS@HOTMAIL.COM#
 Senha: 
 123456789#
+
+Cliente: 
+JORGE#
+Email: 
+JORGE#
+Senha: 
+123456#

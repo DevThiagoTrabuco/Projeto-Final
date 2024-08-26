@@ -92,7 +92,7 @@ void cadastrarProdutos(){
 			fclose(file);
 			
 			printf("\n||Produto: %s\n||Codigo: %d\n||Preco: %.2f\n", productsStruct[0].productName, productsStruct[0].code, productsStruct[0].price);
-			printf("\n||Deseja cadastrar mais algum produto?\n||Sim   ||Nao\n||");
+			printf("\n||Deseja cadastrar mais algum produto?\n||[1]Sim\n||[2]Nao\n||");
 			scanf("%d", &choice);
 			system("cls");
 	    }
